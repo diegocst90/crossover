@@ -1,9 +1,9 @@
 'use strict';
 
-describe('myApp.version module', function() {
-  beforeEach(module('myApp.version'));
+describe('crossover.version module', function() {
+  beforeEach(module('crossover.version'));
 
-  describe('app-version directive', function() {
+  describe('crossover-version directive', function() {
     it('should print current version', function() {
       module(function($provide) {
         $provide.value('version', 'TEST_VER');
