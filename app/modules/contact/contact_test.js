@@ -2,15 +2,16 @@
 
 describe('crossover.contact module', function() {
 
-  beforeEach(module('crossover.contact'));
+    beforeEach(module('crossover.contact'));
 
-  describe('Contact controller', function(){
+    describe('Contact controller', function(){
 
-    it('should load Contact controller', inject(function($controller) {
-      //spec body
-      var contactCtrl = $controller('ContactCtrl');
-      expect(contactCtrl).toBeDefined();
-    }));
+        it('should load Contact controller', inject(function($rootScope, $controller) {
+            //spec body
+            var scope = $rootScope.$new();
+            var contactCtrl = $controller('ContactCtrl', {$scope: scope});
+            expect(contactCtrl).toBeDefined();
+        }));
 
-  });
+    });
 });

@@ -1,6 +1,6 @@
 'use strict';
 
 angular.module('crossover.contact', ['ui.router'])
-.controller('ContactCtrl', [function() {
+.controller('ContactCtrl', ['$scope', function($scope) {
 
 }]);
