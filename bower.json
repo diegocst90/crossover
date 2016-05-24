@@ -1,0 +1,15 @@
+{
+  "name": "crossover-project",
+  "description": "Project requested by Crossover",
+  "version": "1.0.0",
+  "homepage": "https://github.com/diegocst90",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "angular": "~1.4.0",
+    "angular-ui-router": "~1.0.0",
+    "angular-loader": "~1.4.0",
+    "angular-mocks": "~1.4.0",
+    "html5-boilerplate": "~5.2.0"
+  }
+}
