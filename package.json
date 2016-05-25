@@ -1,12 +1,20 @@
 {
-  "name": "angular-seed",
+  "name": "crossover-project",
   "private": true,
   "version": "0.0.0",
-  "description": "A starter project for AngularJS",
-  "repository": "https://github.com/angular/angular-seed",
+  "description": "A test project for Crossover",
+  "repository": "https://github.com/diegocst90/crossover",
   "license": "MIT",
+  "dependencies": {
+      "gulp": "^3.5.6",
+      "gulp-sass": "^2.0.4",
+      "gulp-concat": "^2.2.0",
+      "gulp-minify-css": "^0.3.0",
+      "gulp-rename": "^1.2.0"
+  },
   "devDependencies": {
     "bower": "^1.3.1",
+    "gulp-util": "^2.2.14",
     "http-server": "^0.6.1",
     "jasmine-core": "^2.3.4",
     "karma": "~0.12",
