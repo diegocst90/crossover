@@ -20,7 +20,7 @@ describe('my app', function() {
 
     it('should render home when user navigates to /home', function() {
       expect(element.all(by.css('[ui-view] p')).first().getText()).
-        toMatch(/partial for Home/);
+        toMatch(/Play with the table/);
     });
 
   });
