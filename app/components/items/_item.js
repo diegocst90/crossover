@@ -2,7 +2,7 @@
 'use strict';
 
 /*
- * models/object.js
+ * components/items/_item.js
  *
  * (c) 2015 diegocst90
  * License: MIT
@@ -13,18 +13,18 @@ angular.module('components.items')
     function($q, $state){
         var item = function (data) {
             this.data = angular.extend({
+                id: '', //assuiming id is a PK as indentificator of an item
                 type: '',
                 code: '',
                 owner: '',
                 time_started: Number(new Date()),
-                result_status: 0, //Pending
+                result_status: 0, //0 => Pending, 1 => Running, 2 => Finished (Completed or Accepted), 3 => Wrong (Fail or Rejected)
                 measures: {
                     metrics: { progress: 0, failed: false },
                     build: { progress: 0, failed: false },
                     unit_test: { progress: 0, failed: false },
                     functional_test: { progress: 0, failed: false }
-                },
-                expanded: false
+                }
             },data);
         };
 

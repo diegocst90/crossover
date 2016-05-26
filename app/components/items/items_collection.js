@@ -23,6 +23,11 @@ function($q, $http, $cacheFactory, $state, $stateParams) {
         addItem: function(item) {
             _items.push(item);
         },
+        addItems: function(items) {
+            for(var i=0 ; i < items.length; i++) {
+                this.addItem(items[i]);
+            }
+        },
         getItem: function(item) {
             if (_items.indexOf == 'function') {
                 return _items.indexOf(item);
@@ -32,7 +37,7 @@ function($q, $http, $cacheFactory, $state, $stateParams) {
             //let's check the code
             var index = -1;
             for(var i=0 ; i < _items.length; i++) {
-                if (item.code == _items[i].code) {
+                if (item.data.id == _items[i].data.id) {
                     index = i;
                     break;
                 }
@@ -40,7 +45,7 @@ function($q, $http, $cacheFactory, $state, $stateParams) {
             return index;
         },
         removeItem: function(item) {
-            var index = this.getItem(item.code);
+            var index = this.getItem(item);
             if (index >= 0) _items.splice(index, 1);
         }
     };

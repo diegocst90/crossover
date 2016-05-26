@@ -4,6 +4,8 @@
 angular.module('crossover', [
   'ui.router',
   'smart-table',
+  'ui.bootstrap',
+  'ngAnimate',
   'components.items',
   'crossover.home',
   'crossover.contact',
