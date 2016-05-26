@@ -13,7 +13,7 @@ $running-measure-color: #5e9cd3;
 /* Done (Completed or Accepted) State colors */
 $done-border-color: #578e31;
 $done-background-color: #eef3ec;
-$done-font-color: #496547;
+$done-font-color: #415c32;
 $done-measure-color: #548039;
 
 /* Wrong (Fail or Rejected) State colors */
@@ -21,3 +21,25 @@ $wrong-border-color: #bc0008;
 $wrong-background-color: #fbe5e5;
 $wrong-font-color: #c52c39;
 $wrong-measure-color: #be0712;
+
+/* Default fadeIn/fadeOut animation */
+@mixin fade-in-out-animation() {
+  &.animate-repeat.ng-move,
+  &.animate-repeat.ng-enter,
+  &.animate-repeat.ng-leave {
+    -webkit-transition:all linear 0.5s;
+    transition:all linear 0.5s;
+  }
+
+  &.animate-repeat.ng-leave.ng-leave-active,
+  &.animate-repeat.ng-move,
+  &.animate-repeat.ng-enter {
+    opacity:0;
+  }
+
+  &.animate-repeat.ng-leave,
+  &.animate-repeat.ng-move.ng-move-active,
+  &.animate-repeat.ng-enter.ng-enter-active {
+    opacity:1;
+  }
+}

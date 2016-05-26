@@ -8,7 +8,7 @@
  * License: MIT
  */
 
-angular.module('components.items')
+angular.module('components.services.items')
 .factory('ItemObject',['$q', '$state',
     function($q, $state){
         var item = function (data) {
@@ -37,7 +37,7 @@ angular.module('components.items')
         };
 
         item.prototype.getItemPicture = function() {
-            return (this.isBuild())? 'computer.jpg' : 'firewall.jpg';
+            return (this.isBuild())? 'computer-' + this.getColorClass() + '.svg' : 'wall-' + this.getColorClass() + '.svg';
         };
 
         item.prototype.getResultState = function() {
@@ -50,10 +50,10 @@ angular.module('components.items')
         };
 
         item.prototype.getColorClass = function() {
-            if (this.data.result_status == 0) return 'pending';
-            if (this.data.result_status == 1) return 'running';
-            if (this.data.result_status == 2) return 'done'; //Completed or Accepted
-            if (this.data.result_status == 3) return 'wrong'; //Fail or Rejected
+            if (this.data.result_status == 0) return 'gray';
+            if (this.data.result_status == 1) return 'blue';
+            if (this.data.result_status == 2) return 'green'; //Completed or Accepted
+            if (this.data.result_status == 3) return 'red'; //Fail or Rejected
 
             return '';
         };

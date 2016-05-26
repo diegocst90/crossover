@@ -3,33 +3,17 @@
 <p>Play with the table (sort, filter, page) Then refresh the page or re run the plunk. Your table should be restored</p>
 
 <div class="container">
-    <div class="row header">
-        <div class="col-md-2 col-sm-4 col-xs-12"><p class="lead">Changelist / Build</p></div>
-        <div class="col-md-1 col-sm-2 col-xs-6"><p class="lead">Owner</p></div>
-        <div class="col-md-2 col-sm-4 col-xs-12"><p class="lead">Time Started</p></div>
-        <div class="col-md-1 col-sm-2 col-xs-6"><p class="lead">State</p></div>
-        <div class="col-md-1 col-sm-2 col-xs-6"><p class="lead">Metrics</p></div>
-        <div class="col-md-1 col-sm-2 col-xs-6"><p class="lead">Build</p></div>
-        <div class="col-md-2 col-sm-4 col-xs-12"><p class="lead">Unit Test</p></div>
-        <div class="col-md-2 col-sm-4 col-xs-12"><p class="lead">Functional Test</p></div>
+    <div class="row crossover-header">
+        <div class="col-md-3 col-sm-6 col-xs-12 text-center"><p class="lead">Changelist / Build</p></div>
+        <div class="col-md-1 col-sm-2 col-xs-6 text-center"><p class="lead">Owner</p></div>
+        <div class="col-md-3 col-sm-6 col-xs-12 text-center"><p class="lead">Time Started</p></div>
+        <div class="col-md-1 col-sm-2 col-xs-6 text-center"><p class="lead">State</p></div>
+        <div class="col-md-1 col-sm-2 col-xs-6 text-center"><p class="lead">Metrics</p></div>
+        <div class="col-md-1 col-sm-2 col-xs-6 text-center"><p class="lead">Build</p></div>
+        <div class="col-md-1 col-sm-2 col-xs-6 text-center"><p class="lead">Unit Test</p></div>
+        <div class="col-md-1 col-sm-2 col-xs-6 text-center"><p class="lead">Functional Test</p></div>
     </div>
-    <div ng-repeat="item in items_collection" ng-class="'row crossover-item ' + 'primary-color-' + item.getColorClass()" ng-click="openItemDetails(item)">
-        <div class="col-md-2 col-sm-4 col-xs-12">{{ item.getItemPicture() + ' ' + item.data.code }}</div>
-        <div class="col-md-1 col-sm-2 col-xs-6">{{ item.data.owner }}</div>
-        <div class="col-md-2 col-sm-4 col-xs-12">{{ item.data.time_started | date: 'MM/dd/yyyy h:mma' | lowercase }}</div>
-        <div class="col-md-1 col-sm-2 col-xs-6">{{ item.getResultState() }}</div>
-        <div class="col-md-1 col-sm-2 col-xs-6">
-            <measure-bar ng-if="!item.expanded" measure-data="item.data.measures.metrics"></measure-bar>
-        </div>
-        <div class="col-md-1 col-sm-2 col-xs-6">
-            <measure-bar ng-if="!item.expanded" measure-data="item.data.measures.build"></measure-bar>
-        </div>
-        <div class="col-md-2 col-sm-4 col-xs-12">
-            <measure-bar ng-if="!item.expanded" measure-data="item.data.measures.unit_test"></measure-bar>
-        </div>
-        <div class="col-md-2 col-sm-4 col-xs-12">
-            <measure-bar ng-if="!item.expanded" measure-data="item.data.measures.functional_test"></measure-bar>
-        </div>
-        <div uib-collapse="!item.expanded" class="col-md-12 col-sm-12 col-xs-12">Details if {{ item.data.code }} goes here</div>
+    <div ng-repeat="item in items_collection" ng-class="'animate-repeat row crossover-item ' + 'primary-color-' + item.getColorClass()" ng-click="openItemDetails(item)">
+        <crossover-item item="item"></crossover-item>
     </div>
 </div>

@@ -1,0 +1,12 @@
+<uib-progressbar
+        ng-if="!measureData.failed"
+        value="(measureData.progress >= 0)? measureData.progress*100 : 0"
+        uib-tooltip="{{(measureData.progress)? measureData.progress*100 : 0 | number : 0 }}%">
+</uib-progressbar>
+
+<uib-progressbar
+        class="failed"
+        ng-if="measureData.failed"
+        value="100"
+        uib-tooltip="Failed!">
+</uib-progressbar>

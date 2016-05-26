@@ -1,0 +1,103 @@
+@import 'variables';
+
+.crossover-item {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding: 10px;
+  font-size: 15px;
+  font-weight: 200;
+
+  &.primary-color-gray {
+    border: 2px solid $pending-border-color;
+    background-color: $pending-background-color;
+    color: $pending-font-color;
+
+    .progress .progress-bar {
+      background-image: none;
+      background-color: $pending-measure-color;
+    }
+
+
+  }
+
+  &.primary-color-blue {
+    border: 2px solid $running-border-color;
+    background-color: $running-background-color;
+    color: $running-font-color;
+
+    .progress .progress-bar {
+      background-image: none;
+      background-color: $running-measure-color;
+    }
+  }
+
+  &.primary-color-green {
+    border: 2px solid $done-border-color;
+    background-color: $done-background-color;
+    color: $done-font-color;
+
+    .progress .progress-bar {
+      background-image: none;
+      background-color: $done-measure-color;
+    }
+  }
+
+  &.primary-color-red {
+    border: 2px solid $wrong-border-color;
+    background-color: $wrong-background-color;
+    color: $wrong-font-color;
+
+    .progress .progress-bar {
+      background-image: none;
+      background-color: $wrong-measure-color;
+    }
+  }
+
+  .progress.failed .progress-bar {
+    background-color: $wrong-measure-color;
+  }
+
+  .item-icon {
+    width: 25px;
+    height: 25px;
+    margin-right: 10px;
+  }
+
+  /* Progress bar in <measure-bar> */
+  measure-bar {
+    &.animate-repeat.ng-move .progress,
+    &.animate-repeat.ng-enter .progress,
+    &.animate-repeat.ng-leave .progress {
+      -webkit-transition:all linear 0.5s;
+      transition:all linear 0.5s;
+    }
+
+    &.animate-repeat.ng-leave.ng-leave-active .progress,
+    &.animate-repeat.ng-move .progress,
+    &.animate-repeat.ng-enter .progress {
+      opacity:0;
+    }
+
+    &.animate-repeat.ng-leave .progress,
+    &.animate-repeat.ng-move.ng-move-active .progress,
+    &.animate-repeat.ng-enter.ng-enter-active .progress {
+      opacity:1;
+    }
+
+    &.animate-hide .progress {
+      transition: all linear 0.5s;
+      opacity: 1;
+    }
+
+    &.animate-hide.ng-hide .progress {
+      opacity: 0;
+    }
+  }
+
+  .progress {
+    margin: 0 auto;
+  }
+
+  /* Animate item entrance */
+  @include fade-in-out-animation();
+}

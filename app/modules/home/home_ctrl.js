@@ -15,7 +15,11 @@ angular.module('crossover.home', ['ui.router'])
             type: 'firewall',
             code: 'GUTH-XXS',
             owner: 'Dj Tavo',
-            result_status: 1
+            result_status: 1,
+            measures: {
+                build: {progress: 0.64},
+                metrics: {progress: 0.22}
+            }
         });
         var build3 = new ItemObject({
             id: 'ID305',
@@ -23,14 +27,30 @@ angular.module('crossover.home', ['ui.router'])
             code: 'GUTH-EPD',
             owner: 'diegocst90',
             time_started: 5304534545,
-            result_status: 2
+            result_status: 2,
+            measures: {
+                build: {progress: 1},
+                unit_test: {progress: 1},
+                metrics: {progress: 1},
+                functional_test: {progress: 0.95}
+            }
         });
 
-        ItemsCollection.addItems([build1, build2, build3]);
+        var build4 = new ItemObject({
+            id: 'ID306',
+            type: 'firewall',
+            code: 'GUTH-EPD',
+            owner: 'picmonic',
+            time_started: 5314534545,
+            result_status: 3,
+            measures: {
+                metrics: {progress: 0, failed: true}
+            }
+        });
 
-        $scope.items_collection = ItemsCollection.getItems();
+        ItemsCollection.addItems([build1, build2, build3, build4]);
+        $scope.items_collection = ItemsCollection.items;
 
-        //Methods in view
         /*
          * Collapse all details
          */

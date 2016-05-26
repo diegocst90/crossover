@@ -1,5 +1,37 @@
-@media (min-width: 400px) {
-  .row {
-    display: absolute;
+/* Extra small devices (phones, less than 768px) */
+/* No media query since this is the default in Bootstrap */
+
+.col-xs-15 {
+  width: 20%;
+  float: left;
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .col-sm-15 {
+    width: 20%;
+    float: left;
+  }
+
+  .crossover-item {
+    .progress {
+      max-width: 66px;
+    }
+  }
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .col-md-15 {
+    width: 20%;
+    float: left;
+  }
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .col-lg-15 {
+    width: 20%;
+    float: left;
   }
 }

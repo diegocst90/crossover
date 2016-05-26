@@ -7,21 +7,20 @@
  * License: MIT
  */
 
-angular.module('components.items',[])
+angular.module('components.services.items',[])
 
 .service('ItemsCollection', ['$q', '$http', '$cacheFactory', '$state', '$stateParams',
 function($q, $http, $cacheFactory, $state, $stateParams) {
-    var _items = [];
-
     var ItemsCollection = {
+        items: [],
         getItems: function() {
-            return _items;
+            return this.items;
         },
         setItems: function(items) {
-            _items = items;
+            this.items = items;
         },
         addItem: function(item) {
-            _items.push(item);
+            this.items.push(item);
         },
         addItems: function(items) {
             for(var i=0 ; i < items.length; i++) {
@@ -29,15 +28,15 @@ function($q, $http, $cacheFactory, $state, $stateParams) {
             }
         },
         getItem: function(item) {
-            if (_items.indexOf == 'function') {
-                return _items.indexOf(item);
+            if (this.items.indexOf == 'function') {
+                return this.items.indexOf(item);
             }
 
             //in case indexOf isn't available (IE <= 8)
             //let's check the code
             var index = -1;
-            for(var i=0 ; i < _items.length; i++) {
-                if (item.data.id == _items[i].data.id) {
+            for(var i=0 ; i < this.items.length; i++) {
+                if (item.data.id == this.items[i].data.id) {
                     index = i;
                     break;
                 }
@@ -46,7 +45,7 @@ function($q, $http, $cacheFactory, $state, $stateParams) {
         },
         removeItem: function(item) {
             var index = this.getItem(item);
-            if (index >= 0) _items.splice(index, 1);
+            if (index >= 0) this.items.splice(index, 1);
         }
     };
 
