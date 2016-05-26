@@ -1,30 +1,84 @@
 <div ng-controller="ItemCtrl">
     <div class="col-md-3 col-sm-6 col-xs-12">
-        <img ng-src="{{'/assets/images/' + item.getItemPicture()}}" alt="Item" class="item-icon"/>
-        {{ item.data.code }}
+        <div ng-class="'sprite item-icon sprite-' + ((item.isBuild())? 'computer':'wall' ) + '-' + item.getColorClass() + '-25px'"></div>
+        <span style="vertical-align: top">{{ item.data.code }}</span>
     </div>
     <div class="col-md-1 col-sm-2 col-xs-6 text-center">{{ item.data.owner }}</div>
     <div class="col-md-3 col-sm-6 col-xs-12 text-center">{{ item.data.time_started | date: 'MM/dd/yyyy h:mma' | lowercase }}</div>
     <div class="col-md-1 col-sm-2 col-xs-6 text-right">{{ item.getResultState() }}</div>
     <div class="col-md-1 col-sm-2 col-xs-6 text-center">
-        <measure-bar class="animate-hide ng-hide-animate" ng-show="!item.expanded" measure-data="item.data.measures.metrics"></measure-bar>
+        <measure-bar class="animate-hide" ng-show="!item.expanded" measure-data="item.data.measures.metrics"></measure-bar>
     </div>
     <div class="col-md-1 col-sm-2 col-xs-6 text-center">
-        <measure-bar class="animate-hide ng-hide-animate" ng-show="!item.expanded" measure-data="item.data.measures.build"></measure-bar>
+        <measure-bar class="animate-hide" ng-show="!item.expanded" measure-data="item.data.measures.build"></measure-bar>
     </div>
     <div class="col-md-1 col-sm-2 col-xs-6 text-center">
-        <measure-bar class="animate-hide ng-hide-animate" ng-show="!item.expanded" measure-data="item.data.measures.unit_test"></measure-bar>
+        <measure-bar class="animate-hide" ng-show="!item.expanded" measure-data="item.data.measures.unit_test"></measure-bar>
     </div>
     <div class="col-md-1 col-sm-2 col-xs-6 text-center">
-        <measure-bar class="animate-hide ng-hide-animate" ng-show="!item.expanded" measure-data="item.data.measures.functional_test"></measure-bar>
+        <measure-bar class="animate-hide" ng-show="!item.expanded" measure-data="item.data.measures.functional_test"></measure-bar>
     </div>
     <div uib-collapse="!item.expanded" class="col-md-12 col-sm-12 col-xs-12">
-        <div class="row">
-            <div class="col-md-15 col-sm3">1</div>
-            <div class="col-md-15 col-sm3">2</div>
-            <div class="col-md-15 col-sm3">3</div>
-            <div class="col-md-15 col-sm3">4</div>
-            <div class="col-md-15 col-sm3">5 {{ item.data.code }}</div>
+        <div class="row padded-top">
+            <div class="col-md-15 col-sm3">
+                <div class="measure_block padded-left padded-right">
+                    <h5>Metrics</h5>
+                    <div class="row">
+                        <div class="col-md-5">
+                            <div class="metric-critery text-center">
+                                <div style="background-image: url('/assets/images/arrow-up.svg')" class="metric-arrow">
+                                    64
+                                </div>
+                                <p>Test</p>
+                            </div>
+                        </div>
+                        <div class="col-md-7">
+                            <div class="metric-critery text-center">
+                                <div style="background-image: url('/assets/images/arrow-down.svg')" class="metric-arrow">
+                                    12
+                                </div>
+                                <p>Maintainability</p>
+                            </div>
+                        </div>
+                        <div class="col-md-5">
+                            <div class="metric-critery text-center">
+                                <div style="background-image: url('/assets/images/arrow-left.svg')" class="metric-arrow">
+                                    67
+                                </div>
+                                <p>Security</p>
+                            </div>
+                        </div>
+                        <div class="col-md-7">
+                            <div class="metric-critery text-center">
+                                <div style="background-image: url('/assets/images/arrow-right.svg')" class="metric-arrow">
+                                    11
+                                </div>
+                                <p>Workmanship</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-15 col-sm3">
+                <div class="measure_block padded-left padded-right">
+                    <h5>Build</h5>
+                </div>
+            </div>
+            <div class="col-md-15 col-sm3">
+                <div class="measure_block padded-left padded-right">
+                    <h5>Unit Test</h5>
+                </div>
+            </div>
+            <div class="col-md-15 col-sm3">
+                <div class="measure_block padded-left padded-right">
+                    <h5>Functional Test</h5>
+                </div>
+            </div>
+            <div class="col-md-15 col-sm3">
+                <div class="padded-left padded-right">
+                    <p>Result</p>
+                </div>
+            </div>
         </div>
     </div>
 </div>
