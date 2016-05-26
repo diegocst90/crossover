@@ -45,6 +45,17 @@ angular.module('components.items')
             if (this.data.result_status == 1) return 'Running';
             if (this.data.result_status == 2) return (this.isBuild())? 'Completed' : 'Accepted'; //Completed or Accepted
             if (this.data.result_status == 3) return (this.isBuild())? 'Fail' : 'Rejected'; //Fail or Rejected
+
+            return '';
+        };
+
+        item.prototype.getColorClass = function() {
+            if (this.data.result_status == 0) return 'pending';
+            if (this.data.result_status == 1) return 'running';
+            if (this.data.result_status == 2) return 'done'; //Completed or Accepted
+            if (this.data.result_status == 3) return 'wrong'; //Fail or Rejected
+
+            return '';
         };
 
         return item;

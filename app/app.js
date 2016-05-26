@@ -3,7 +3,6 @@
 // Declare app level module which depends on views, and components
 angular.module('crossover', [
   'ui.router',
-  'smart-table',
   'ui.bootstrap',
   'ngAnimate',
   'components.items',

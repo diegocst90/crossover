@@ -2,32 +2,34 @@
 
 <p>Play with the table (sort, filter, page) Then refresh the page or re run the plunk. Your table should be restored</p>
 
-<table st-persist="crossover_items" st-table="items_collection" class="table">
-    <thead>
-        <tr>
-            <th st-sort="data.code">Changelist / Build</th>
-            <th st-sort="data.owner">Owner</th>
-            <th st-sort="data.time_started">Time Started</th>
-            <th st-sort="data.result_status">State</th>
-            <th st-sort="data.measures.metrics">Metrics</th>
-            <th st-sort="data.measures.build">Build</th>
-            <th st-sort="data.measures.unit_test">Unit Test</th>
-            <th st-sort="data.measures.functional_test">Functional Test</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr ng-repeat-start="item in items_collection" ng-click="openItemDetails(item)">
-            <td>{{ item.getItemPicture() + ' ' + item.data.code }}</td>
-            <td>{{ item.data.owner }}</td>
-            <td>{{ item.data.time_started | date: 'MM/dd/yyyy h:mma' | lowercase }}</td>
-            <td>{{ item.getResultState() }}</td>
-            <td><measure-bar ng-if="!item.expanded" measure-data="item.data.measures.metrics"></measure-bar></td>
-            <td><measure-bar ng-if="!item.expanded" measure-data="item.data.measures.build"></measure-bar></td>
-            <td><measure-bar ng-if="!item.expanded" measure-data="item.data.measures.unit_test"></measure-bar></td>
-            <td><measure-bar ng-if="!item.expanded" measure-data="item.data.measures.functional_test"></measure-bar></td>
-        </tr>
-        <tr ng-if="item.expanded" ng-repeat-end="" ng-click="openItemDetails(item)">
-            <td colspan="9">Details if {{ item.data.code }} goes here</td>
-        </tr>
-    </tbody>
-</table>
+<div class="container">
+    <div class="row header">
+        <div class="col-md-2 col-sm-4 col-xs-12"><p class="lead">Changelist / Build</p></div>
+        <div class="col-md-1 col-sm-2 col-xs-6"><p class="lead">Owner</p></div>
+        <div class="col-md-2 col-sm-4 col-xs-12"><p class="lead">Time Started</p></div>
+        <div class="col-md-1 col-sm-2 col-xs-6"><p class="lead">State</p></div>
+        <div class="col-md-1 col-sm-2 col-xs-6"><p class="lead">Metrics</p></div>
+        <div class="col-md-1 col-sm-2 col-xs-6"><p class="lead">Build</p></div>
+        <div class="col-md-2 col-sm-4 col-xs-12"><p class="lead">Unit Test</p></div>
+        <div class="col-md-2 col-sm-4 col-xs-12"><p class="lead">Functional Test</p></div>
+    </div>
+    <div ng-repeat="item in items_collection" ng-class="'row crossover-item ' + 'primary-color-' + item.getColorClass()" ng-click="openItemDetails(item)">
+        <div class="col-md-2 col-sm-4 col-xs-12">{{ item.getItemPicture() + ' ' + item.data.code }}</div>
+        <div class="col-md-1 col-sm-2 col-xs-6">{{ item.data.owner }}</div>
+        <div class="col-md-2 col-sm-4 col-xs-12">{{ item.data.time_started | date: 'MM/dd/yyyy h:mma' | lowercase }}</div>
+        <div class="col-md-1 col-sm-2 col-xs-6">{{ item.getResultState() }}</div>
+        <div class="col-md-1 col-sm-2 col-xs-6">
+            <measure-bar ng-if="!item.expanded" measure-data="item.data.measures.metrics"></measure-bar>
+        </div>
+        <div class="col-md-1 col-sm-2 col-xs-6">
+            <measure-bar ng-if="!item.expanded" measure-data="item.data.measures.build"></measure-bar>
+        </div>
+        <div class="col-md-2 col-sm-4 col-xs-12">
+            <measure-bar ng-if="!item.expanded" measure-data="item.data.measures.unit_test"></measure-bar>
+        </div>
+        <div class="col-md-2 col-sm-4 col-xs-12">
+            <measure-bar ng-if="!item.expanded" measure-data="item.data.measures.functional_test"></measure-bar>
+        </div>
+        <div uib-collapse="!item.expanded" class="col-md-12 col-sm-12 col-xs-12">Details if {{ item.data.code }} goes here</div>
+    </div>
+</div>

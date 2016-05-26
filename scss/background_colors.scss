@@ -1,0 +1,31 @@
+@import 'variables';
+
+.crossover-item {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding: 10px;
+
+  &.primary-color-pending {
+    border: 2px solid $pending-border-color;
+    background-color: $pending-background-color;
+    color: $pending-font-color;
+  }
+
+  &.primary-color-running {
+    border: 2px solid $running-border-color;
+    background-color: $running-background-color;
+    color: $running-font-color;
+  }
+
+  &.primary-color-done {
+    border: 2px solid $done-border-color;
+    background-color: $done-background-color;
+    color: $done-font-color;
+  }
+
+  &.primary-color-wrong {
+    border: 2px solid $wrong-border-color;
+    background-color: $wrong-background-color;
+    color: $wrong-font-color;
+  }
+}

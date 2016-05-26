@@ -14,7 +14,7 @@ var paths = {
 gulp.task('default', ['sass']);
 
 gulp.task('sass', function(done) {
-  gulp.src(['./scss/home.scss', './scss/media-queries.scss'])
+  gulp.src(['./scss/home.scss', './scss/media-queries.scss', './scss/background_colors.scss'])
     .pipe(sass())
     .on('error', sass.logError)
     .pipe(gulp.dest('./app/assets/css/'))

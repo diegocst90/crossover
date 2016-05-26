@@ -1,0 +1,23 @@
+/* Pending State colors */
+$pending-border-color: #cacbcd;
+$pending-background-color: #f7f9fc;
+$pending-font-color: #8d8f99;
+$pending-measure-color: #d8d8d8;
+
+/* Running State colors */
+$running-border-color: #4c86b7;
+$running-background-color: #eef2f8;
+$running-font-color: #465b7f;
+$running-measure-color: #5e9cd3;
+
+/* Done (Completed or Accepted) State colors */
+$done-border-color: #578e31;
+$done-background-color: #eef3ec;
+$done-font-color: #496547;
+$done-measure-color: #548039;
+
+/* Wrong (Fail or Rejected) State colors */
+$wrong-border-color: #bc0008;
+$wrong-background-color: #fbe5e5;
+$wrong-font-color: #c52c39;
+$wrong-measure-color: #be0712;
