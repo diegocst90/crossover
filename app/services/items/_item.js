@@ -40,6 +40,14 @@ angular.module('components.services.items')
             return (this.data.result_status == 0);
         };
 
+        item.prototype.isFinished = function() {
+            return (this.data.result_status == 2);
+        };
+
+        item.prototype.isFailedOrRejected = function() {
+            return (this.data.result_status == 3);
+        };
+
         item.prototype.getItemPicture = function() {
             return (this.isBuild())? 'computer-' + this.getColorClass() + '.svg' : 'wall-' + this.getColorClass() + '.svg';
         };

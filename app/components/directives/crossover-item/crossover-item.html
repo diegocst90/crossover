@@ -77,7 +77,6 @@
                             <canvas id="{{'unit-test-' + item.data.id}}"
                                     height="100" width="200"
                                     class="chart chart-pie"
-                                    chart-options="{global: {tooltips: {enabled: false}}}"
                                     chart-data="[140,10]" chart-labels="['Passed','Failed']" chart-colours="['#72ac4d', '#eb7d3b']">
                             </canvas>
                         </div>
@@ -99,7 +98,6 @@
                             <canvas id="{{'functional-test-' + item.data.id}}"
                                     height="100" width="200"
                                     class="chart chart-pie"
-                                    chart-options="{tooltips: {enabled: false}}"
                                     chart-data="[4321,2145]" chart-labels="['Passed','Failed']" chart-colours="['#72ac4d', '#eb7d3b']">
                             </canvas>
                         </div>
@@ -115,7 +113,10 @@
             </div>
             <div class="col-md-15 col-sm3">
                 <div class="padded-left padded-right">
-                    <p>Result</p>
+                    <p class="text-center">Result</p>
+                    <div class="results">
+                        <execution-result item="item"></execution-result>
+                    </div>
                 </div>
             </div>
         </div>

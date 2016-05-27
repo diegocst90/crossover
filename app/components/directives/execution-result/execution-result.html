@@ -1,0 +1,39 @@
+<div ng-if="item.isFirewall()" class="text-center">
+    <div ng-if="item.isFinished()">
+        <p class="color-warning">Change Accepted</p>
+        <p class="x-large color-warning">Auto-Merged</p>
+        <button stop-event type="button" class="btn btn-primary btn-lg"><i class="icon-search icon-white"></i>&nbsp;Merged Build</button>
+    </div>
+    <div ng-if="item.isFailedOrRejected()">
+        <p class="color-danger">Change Rejected</p>
+        <p class="x-large color-danger">Metrics Reduction</p>
+        <button stop-event type="button" class="btn btn-primary btn-lg">Find Issues</button>
+    </div>
+    <div ng-if="!item.isFinished() && !item.isFailedOrRejected()">
+        <p class="color-black">{{ (item.isPending())? 'Waiting for execution' : 'Executing ...'}}</p>
+    </div>
+</div>
+<div ng-if="item.isBuild()" class="text-center">
+    <div ng-if="item.isFinished()">
+        <p class="x-large color-green">Complete</p>
+        <button stop-event type="button" class="btn btn-primary btn-lg">Deploy</button>
+        <p>to</p>
+        <div class="btn-group" uib-dropdown keyboard-nav>
+            <button stop-event id="{{ 'deployment-env-' + item.data.id }}" type="button" class="btn btn-primary" uib-dropdown-toggle>
+                Production <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="{{ 'deployment-env-' + item.data.id }}">
+                <li role="menuitem"><a stop-event href="#">Stage</a></li>
+                <li role="menuitem"><a stop-event href="#">QA</a></li>
+                <li role="menuitem"><a stop-event href="#">Production</a></li>
+            </ul>
+        </div>
+    </div>
+    <div ng-if="item.isFailedOrRejected()">
+        <p class="x-large color-danger">Failed</p>
+        <button stop-event type="button" class="btn btn-primary btn-lg"><i class="icon-search icon-white"></i>&nbsp;Check Log Files</button>
+    </div>
+    <div ng-if="!item.isFinished() && !item.isFailedOrRejected()">
+        <p class="color-black">{{ (item.isPending())? 'Waiting for execution' : 'Executing ...'}}</p>
+    </div>
+</div>
