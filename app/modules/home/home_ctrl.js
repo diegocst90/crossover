@@ -42,13 +42,45 @@ angular.module('crossover.home', ['ui.router'])
             code: 'GUTH-EPD',
             owner: 'picmonic',
             time_started: 5314534545,
+            result_status: 2,
+            measures: {
+                build: {progress: 1},
+                unit_test: {progress: 1},
+                metrics: {progress: 1},
+                functional_test: {progress: 1}
+            }
+        });
+        var build5 = new ItemObject({
+            id: 'ID307',
+            type: 'build',
+            code: 'UX-7053',
+            owner: 'diegocst90',
+            time_started: 404934923,
             result_status: 3,
             measures: {
-                metrics: {progress: 0, failed: true}
+                build: {progress: 0.56},
+                unit_test: {progress: 0.13},
+                metrics: {progress: 0.35},
+                functional_test: {progress: 0.45}
             }
         });
 
-        ItemsCollection.addItems([build1, build2, build3, build4]);
+        var build6 = new ItemObject({
+            id: 'ID308',
+            type: 'firewall',
+            code: 'PSD-3DE',
+            owner: 'picmonic',
+            time_started: 404934923,
+            result_status: 3,
+            measures: {
+                build: {progress: 0.26},
+                unit_test: {progress: 0.83},
+                metrics: {progress: 0.85},
+                functional_test: {progress: 0.15}
+            }
+        });
+
+        ItemsCollection.addItems([build1, build2, build3, build4, build5, build6]);
         $scope.items_collection = ItemsCollection.items;
 
         /*
