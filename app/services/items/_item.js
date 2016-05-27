@@ -9,8 +9,8 @@
  */
 
 angular.module('crossover.items', [])
-.factory('ItemObject',['$q', '$state',
-    function($q, $state){
+.factory('ItemObject',[
+    function(){
         var item = function (data) {
             this.data = angular.extend({
                 id: '', //assuiming id is a PK as indentificator of an item

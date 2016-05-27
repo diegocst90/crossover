@@ -98,13 +98,13 @@ $templateCache.put("components/directives/crossover-item/popovers/_unit-test-mea
     "<p class=\"color-black\"> Here's included all the information related Unit Test</p>")
 
 $templateCache.put("components/directives/crossover-item/item_directives/build-measurement/build-measurement.html","<div class=\"measure_block padded-left padded-right\">\n" +
-    "    <h5>Build</h5>\n" +
+    "    <h5>Build {{ itemBuild }}</h5>\n" +
     "    <div class=\"row extra-margin\">\n" +
-    "        <div class=\"col-md-6 col-sm-6 col-xs-6 text-center\" ng-if=\"itemBuild.categories.debug\">\n" +
+    "        <div class=\"col-md-6 col-sm-6 col-xs-6 text-center debug-section\" ng-if=\"itemBuild.categories.debug\">\n" +
     "            <div class=\"build-critery sprite sprite-computer-blue-60px\"></div>\n" +
     "            <p>Debug</p>\n" +
     "        </div>\n" +
-    "        <div class=\"col-md-6 col-sm-6 col-xs-6 text-center\" ng-if=\"itemBuild.categories.release\">\n" +
+    "        <div class=\"col-md-6 col-sm-6 col-xs-6 text-center release-section\" ng-if=\"itemBuild.categories.release\">\n" +
     "            <div class=\"build-critery sprite sprite-computer-blue-60px\"></div>\n" +
     "            <p>Release</p>\n" +
     "        </div>\n" +

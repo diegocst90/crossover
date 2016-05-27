@@ -3,7 +3,7 @@
  */
 'use strict';
 
-describe('crossover.directives.color-percent colorPercent', function() {
+describe('crossover.directives colorPercent', function() {
     var $compile,
         $rootScope;
 
@@ -19,7 +19,7 @@ describe('crossover.directives.color-percent colorPercent', function() {
     }));
 
     //Test danger case
-    it('should be "danger" if it is bigger than 0.75', function() {
+    it('should be "danger" if it is less than 0.5', function() {
         // Compile a piece of HTML containing the directive
         var element = $compile("<color-percent percent=\"0.32\"></color-percent>")($rootScope);
 
@@ -49,5 +49,16 @@ describe('crossover.directives.color-percent colorPercent', function() {
         $rootScope.$digest();
 
         expect(element.find('span').attr('class')).toContain("color-ok");
+    });
+
+    //Test if the "%" is properly rounded up
+    it('should round the percent properly', function() {
+        // Compile a piece of HTML containing the directive
+        var element = $compile("<color-percent percent=\"0.56\"></color-percent>")($rootScope);
+
+        // Start digest cycle
+        $rootScope.$digest();
+
+        expect(element.find('span').text()).toMatch("56%");
     });
 });
