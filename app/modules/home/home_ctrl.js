@@ -41,8 +41,7 @@ angular.module('crossover.home', ['ui.router'])
                     categories: {
                         passed: 503,
                         failed: 54
-                    },
-                    covered_code: 0.76
+                    }
                 },
                 functional_test: {
                     progress: 0.47,
@@ -50,8 +49,7 @@ angular.module('crossover.home', ['ui.router'])
                     categories: {
                         passed: 103,
                         failed: 224
-                    },
-                    covered_code: 0.96
+                    }
                 }
             }
         });

@@ -8,7 +8,8 @@ angular.module('crossover', [
   'chart.js',
   'crossover.items',
   'crossover.directives',
-  'crossover.home'
+  'crossover.home',
+  'crossover-html2'
 ]).
 config(function($stateProvider, $urlRouterProvider, $httpProvider) {
     // if none of the above states are matched, use this as the fallback

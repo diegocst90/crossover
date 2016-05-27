@@ -5,10 +5,11 @@
 
 describe('crossover.directives buildMeasurement', function() {
     var $compile,
-        $rootScope;
+        $rootScope,
+        $scope;
 
     // Load the myApp module, which contains the directive
-    beforeEach(module('crossover.directives'));
+    beforeEach(module('crossover.directives'), module('crossover.items'), module('crossover'));
 
     // Store references to $rootScope and $compile
     // so they are available to all tests in this describe block
@@ -16,12 +17,31 @@ describe('crossover.directives buildMeasurement', function() {
         // The injector unwraps the underscores (_) from around the parameter names when matching
         $compile = _$compile_;
         $rootScope = _$rootScope_;
+        $scope = $rootScope.$new();
     }));
 
     //Test if filled section is properly set
     it('should show debug section only if it\'s available', function() {
+        var $injector = angular.injector(['crossover.items']);
+        var ItemObject = $injector.get('ItemObject');
+
         // Compile a piece of HTML containing the directive
-        var element = $compile("<build-measurement stop-event item-build=\"\{'categories': \{'debug': true, 'release': false\}\}\"  uib-popover-template=\"'components/directives/crossover-item/popovers/_build-measurement.html'\" popover-trigger=\"outsideClick\"></build-measurement>")($rootScope);
+        $scope.item = new ItemObject({
+            id: 'ID303',
+            type: 'firewall',
+            code: 'DOER0-323',
+            owner: 'diegocst90',
+            result_status: 2,
+            measures: {
+                build: {
+                    categories: {
+                        debug: true,
+                        release: false
+                    }
+                }
+            }
+        });
+        var element = $compile("<build-measurement item-build=\"item.data.measures.build\"></build-measurement>")($scope);
 
         // Start digest cycle
         $rootScope.$digest();
@@ -35,8 +55,27 @@ describe('crossover.directives buildMeasurement', function() {
 
     //Test if unfilled section is properly set
     it('should show date in readable format', function() {
+        var $injector = angular.injector(['crossover.items']);
+        var ItemObject = $injector.get('ItemObject');
+
         // Compile a piece of HTML containing the directive
-        var element = $compile("<build-measurement stop-event item-build=\"\{'categories': \{'debug': true, 'release': false\}, 'last_update': 1464367035996\}\"  uib-popover-template=\"'components/directives/crossover-item/popovers/_build-measurement.html'\" popover-trigger=\"outsideClick\"></build-measurement>")($rootScope);
+        $scope.item = new ItemObject({
+            id: 'ID303',
+            type: 'firewall',
+            code: 'DOER0-323',
+            owner: 'diegocst90',
+            result_status: 2,
+            measures: {
+                build: {
+                    categories: {
+                        debug: true,
+                        release: false
+                    },
+                    last_update: 1464367035996
+                }
+            }
+        });
+        var element = $compile("<build-measurement item-build=\"item.data.measures.build\"></build-measurement>")($scope);
 
         // Start digest cycle
         $rootScope.$digest();

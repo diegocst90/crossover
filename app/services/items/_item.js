@@ -45,8 +45,7 @@ angular.module('crossover.items', [])
                         categories: {
                             passed: 0,
                             failed: 0
-                        },
-                        covered_code: 0
+                        }
                     },
                     functional_test: {
                         progress: 0,
@@ -54,8 +53,7 @@ angular.module('crossover.items', [])
                         categories: {
                             passed: 0,
                             failed: 0
-                        },
-                        covered_code: 0
+                        }
                     }
                 }
             },data);

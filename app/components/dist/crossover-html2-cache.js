@@ -22,55 +22,54 @@ $templateCache.put("components/directives/coverage-percent/coverage-percent.html
     "</div>\n" +
     "")
 
-$templateCache.put("components/directives/crossover-item/crossover-item.html","<div ng-controller=\"ItemCtrl\">\n" +
-    "    <div class=\"item-field col-md-3 col-sm-6 col-xs-6\">\n" +
-    "        <div ng-class=\"'sprite item-icon sprite-' + ((item.isBuild())? 'computer':'wall' ) + '-' + item.getColorClass() + '-25px'\"></div>\n" +
-    "        <span style=\"vertical-align: top\">{{ item.data.code }}</span>\n" +
-    "    </div>\n" +
-    "    <div class=\"item-field col-md-1 col-sm-2 col-xs-6 text-center\">{{ item.data.owner }}</div>\n" +
-    "    <div class=\"item-field col-md-3 col-sm-4 col-xs-6 text-center\">{{ item.data.time_started | date: 'MM/dd/yyyy h:mma' | lowercase }}</div>\n" +
-    "    <div class=\"item-field col-md-1 col-sm-4 col-xs-6 text-left text-center-xs text-center-md text-center-lg\"><span class=\"visible-sm-inline visible-xs-inline\">State: </span>{{ item.getResultState() }}</div>\n" +
-    "    <div ng-class=\"'item-field measure-content col-md-1 col-sm-2 col-xs-6 text-center ' + ((item.expanded)? 'hidden-xs':'')\">\n" +
-    "        <measure-bar class=\"animate-hide\" ng-show=\"!item.expanded\" measure-data=\"item.data.measures.metrics\"></measure-bar>\n" +
-    "    </div>\n" +
-    "    <div ng-class=\"'item-field measure-content col-md-1 col-sm-2 col-xs-6 text-center ' + ((item.expanded)? 'hidden-xs':'')\">\n" +
-    "        <measure-bar class=\"animate-hide\" ng-show=\"!item.expanded\" measure-data=\"item.data.measures.build\"></measure-bar>\n" +
-    "    </div>\n" +
-    "    <div ng-class=\"'item-field measure-content col-md-1 col-sm-2 col-xs-6 text-center ' + ((item.expanded)? 'hidden-xs':'')\">\n" +
-    "        <measure-bar class=\"animate-hide\" ng-show=\"!item.expanded\" measure-data=\"item.data.measures.unit_test\"></measure-bar>\n" +
-    "    </div>\n" +
-    "    <div ng-class=\"'item-field measure-content col-md-1 col-sm-2 col-xs-6 text-center ' + ((item.expanded)? 'hidden-xs':'')\">\n" +
-    "        <measure-bar class=\"animate-hide\" ng-show=\"!item.expanded\" measure-data=\"item.data.measures.functional_test\"></measure-bar>\n" +
-    "    </div>\n" +
-    "    <div uib-collapse=\"!item.expanded\" class=\"col-md-12 col-sm-12 col-xs-12\">\n" +
-    "        <div class=\"row padded-top\">\n" +
-    "            <div class=\"col-md-15 col-sm-6 col-xs-12\">\n" +
-    "                <metrics-measurement stop-event item-metrics=\"item.data.measures.metrics\" uib-popover-template=\"'components/directives/crossover-item/popovers/_metrics-measurement.html'\" popover-trigger=\"outsideClick\"></metrics-measurement>\n" +
-    "            </div>\n" +
-    "            <div class=\"visible-xs-inline-block col-xs-12 padded-top\"></div>\n" +
-    "            <div class=\"col-md-15 col-sm-6 col-xs-12\">\n" +
-    "                <build-measurement stop-event item-build=\"item.data.measures.build\" uib-popover-template=\"'components/directives/crossover-item/popovers/_build-measurement.html'\" popover-trigger=\"outsideClick\"></build-measurement>\n" +
-    "            </div>\n" +
-    "            <div class=\"visible-sm-inline-block visible-xs-inline-block col-sm-12 col-xs-12 padded-top\"></div>\n" +
-    "            <div class=\"col-md-15 col-sm-4 col-xs-12\">\n" +
-    "                <test-measurement stop-event title=\"Unit Test\" item=\"item\" measurement-index=\"unit_test\" uib-popover-template=\"'components/directives/crossover-item/popovers/_unit-test-measurement.html'\" popover-trigger=\"outsideClick\"></test-measurement>\n" +
-    "            </div>\n" +
-    "            <div class=\"visible-xs-inline-block col-xs-12 padded-top\"></div>\n" +
-    "            <div class=\"col-md-15 col-sm-4 col-xs-12\">\n" +
-    "                <test-measurement stop-event title=\"Functional Test\" item=\"item\" measurement-index=\"functional_test\" uib-popover-template=\"'components/directives/crossover-item/popovers/_functional-test-measurement.html'\" popover-trigger=\"outsideClick\"></test-measurement>\n" +
-    "            </div>\n" +
-    "            <div class=\"visible-xs-inline-block col-xs-12 padded-top\"></div>\n" +
-    "            <div class=\"col-md-15 col-sm-4 col-xs-12\">\n" +
-    "                <div class=\"padded-left padded-right\">\n" +
-    "                    <p class=\"text-center color-black\">Result</p>\n" +
-    "                    <div class=\"results\">\n" +
-    "                        <execution-result item=\"item\"></execution-result>\n" +
-    "                    </div>\n" +
+$templateCache.put("components/directives/crossover-item/crossover-item.html","<div class=\"item-field col-md-3 col-sm-6 col-xs-6\">\n" +
+    "    <div ng-class=\"'sprite item-icon sprite-' + ((item.isBuild())? 'computer':'wall' ) + '-' + item.getColorClass() + '-25px'\"></div>\n" +
+    "    <span style=\"vertical-align: top\">{{ item.data.code }}</span>\n" +
+    "</div>\n" +
+    "<div class=\"item-field col-md-1 col-sm-2 col-xs-6 text-center\">{{ item.data.owner }}</div>\n" +
+    "<div class=\"item-field col-md-3 col-sm-4 col-xs-6 text-center\">{{ item.data.time_started | date: 'MM/dd/yyyy h:mma' | lowercase }}</div>\n" +
+    "<div class=\"item-field col-md-1 col-sm-4 col-xs-6 text-left text-center-xs text-center-md text-center-lg\"><span class=\"visible-sm-inline visible-xs-inline\">State: </span>{{ item.getResultState() }}</div>\n" +
+    "<div ng-class=\"'item-field measure-content col-md-1 col-sm-2 col-xs-6 text-center ' + ((item.expanded)? 'hidden-xs':'')\">\n" +
+    "    <measure-bar class=\"animate-hide\" ng-show=\"!item.expanded\" measure-data=\"item.data.measures.metrics\"></measure-bar>\n" +
+    "</div>\n" +
+    "<div ng-class=\"'item-field measure-content col-md-1 col-sm-2 col-xs-6 text-center ' + ((item.expanded)? 'hidden-xs':'')\">\n" +
+    "    <measure-bar class=\"animate-hide\" ng-show=\"!item.expanded\" measure-data=\"item.data.measures.build\"></measure-bar>\n" +
+    "</div>\n" +
+    "<div ng-class=\"'item-field measure-content col-md-1 col-sm-2 col-xs-6 text-center ' + ((item.expanded)? 'hidden-xs':'')\">\n" +
+    "    <measure-bar class=\"animate-hide\" ng-show=\"!item.expanded\" measure-data=\"item.data.measures.unit_test\"></measure-bar>\n" +
+    "</div>\n" +
+    "<div ng-class=\"'item-field measure-content col-md-1 col-sm-2 col-xs-6 text-center ' + ((item.expanded)? 'hidden-xs':'')\">\n" +
+    "    <measure-bar class=\"animate-hide\" ng-show=\"!item.expanded\" measure-data=\"item.data.measures.functional_test\"></measure-bar>\n" +
+    "</div>\n" +
+    "<div uib-collapse=\"!item.expanded\" class=\"item-details col-md-12 col-sm-12 col-xs-12\">\n" +
+    "    <div class=\"row padded-top\">\n" +
+    "        <div class=\"col-md-15 col-sm-6 col-xs-12\">\n" +
+    "            <metrics-measurement stop-event item-metrics=\"item.data.measures.metrics\" uib-popover-template=\"'components/directives/crossover-item/popovers/_metrics-measurement.html'\" popover-trigger=\"outsideClick\"></metrics-measurement>\n" +
+    "        </div>\n" +
+    "        <div class=\"visible-xs-inline-block col-xs-12 padded-top\"></div>\n" +
+    "        <div class=\"col-md-15 col-sm-6 col-xs-12\">\n" +
+    "            <build-measurement stop-event item-build=\"item.data.measures.build\" uib-popover-template=\"'components/directives/crossover-item/popovers/_build-measurement.html'\" popover-trigger=\"outsideClick\"></build-measurement>\n" +
+    "        </div>\n" +
+    "        <div class=\"visible-sm-inline-block visible-xs-inline-block col-sm-12 col-xs-12 padded-top\"></div>\n" +
+    "        <div class=\"col-md-15 col-sm-4 col-xs-12\">\n" +
+    "            <test-measurement stop-event title=\"Unit Test\" item=\"item\" measurement-index=\"unit_test\" uib-popover-template=\"'components/directives/crossover-item/popovers/_unit-test-measurement.html'\" popover-trigger=\"outsideClick\"></test-measurement>\n" +
+    "        </div>\n" +
+    "        <div class=\"visible-xs-inline-block col-xs-12 padded-top\"></div>\n" +
+    "        <div class=\"col-md-15 col-sm-4 col-xs-12\">\n" +
+    "            <test-measurement stop-event title=\"Functional Test\" item=\"item\" measurement-index=\"functional_test\" uib-popover-template=\"'components/directives/crossover-item/popovers/_functional-test-measurement.html'\" popover-trigger=\"outsideClick\"></test-measurement>\n" +
+    "        </div>\n" +
+    "        <div class=\"visible-xs-inline-block col-xs-12 padded-top\"></div>\n" +
+    "        <div class=\"col-md-15 col-sm-4 col-xs-12\">\n" +
+    "            <div class=\"padded-left padded-right\">\n" +
+    "                <p class=\"text-center color-black\">Result</p>\n" +
+    "                <div class=\"results\">\n" +
+    "                    <execution-result item=\"item\"></execution-result>\n" +
     "                </div>\n" +
     "            </div>\n" +
     "        </div>\n" +
     "    </div>\n" +
-    "</div>")
+    "</div>\n" +
+    "")
 
 $templateCache.put("components/directives/measure-bar/measure-bar.html","<uib-progressbar\n" +
     "        ng-if=\"!measureData.failed\"\n" +
@@ -98,7 +97,7 @@ $templateCache.put("components/directives/crossover-item/popovers/_unit-test-mea
     "<p class=\"color-black\"> Here's included all the information related Unit Test</p>")
 
 $templateCache.put("components/directives/crossover-item/item_directives/build-measurement/build-measurement.html","<div class=\"measure_block padded-left padded-right\">\n" +
-    "    <h5>Build {{ itemBuild }}</h5>\n" +
+    "    <h5>Build</h5>\n" +
     "    <div class=\"row extra-margin\">\n" +
     "        <div class=\"col-md-6 col-sm-6 col-xs-6 text-center debug-section\" ng-if=\"itemBuild.categories.debug\">\n" +
     "            <div class=\"build-critery sprite sprite-computer-blue-60px\"></div>\n" +
@@ -159,25 +158,25 @@ $templateCache.put("components/directives/crossover-item/item_directives/metrics
     "    <h5>Metrics</h5>\n" +
     "    <div class=\"row\">\n" +
     "        <div class=\"col-md-5 col-sm-6 col-xs-6 text-center ellipsis-overflow\">\n" +
-    "            <div ng-class=\"'metric-critery sprite sprite-arrow-' + ((itemMetrics.categories.test.tendency == '+')? 'up':'down' ) + '-' + ((itemMetrics.categories.test.tendency == '+')? 'green':'red' ) + '-60px'\">\n" +
+    "            <div ng-class=\"'test-block metric-critery sprite sprite-arrow-' + ((itemMetrics.categories.test.tendency == '+')? 'up':'down' ) + '-' + ((itemMetrics.categories.test.tendency == '+')? 'green':'red' ) + '-60px'\">\n" +
     "                <span class=\"color-white\">{{itemMetrics.categories.test.percent * 100 | number: 0}}</span>\n" +
     "            </div>\n" +
     "            <p>Test</p>\n" +
     "        </div>\n" +
     "        <div class=\"col-md-7 col-sm-6 col-xs-6 text-center ellipsis-overflow\">\n" +
-    "            <div ng-class=\"'metric-critery sprite sprite-arrow-' + ((itemMetrics.categories.maintainability.tendency == '+')? 'up':'down' ) + '-' + ((itemMetrics.categories.maintainability.tendency == '+')? 'green':'red' ) + '-60px'\">\n" +
+    "            <div ng-class=\"'maintainability-block metric-critery sprite sprite-arrow-' + ((itemMetrics.categories.maintainability.tendency == '+')? 'up':'down' ) + '-' + ((itemMetrics.categories.maintainability.tendency == '+')? 'green':'red' ) + '-60px'\">\n" +
     "                <span class=\"color-white\">{{itemMetrics.categories.maintainability.percent * 100 | number: 0}}</span>\n" +
     "            </div>\n" +
     "            <p>Maintainability</p>\n" +
     "        </div>\n" +
     "        <div class=\"col-md-5 col-sm-6 col-xs-6 text-center ellipsis-overflow\">\n" +
-    "            <div ng-class=\"'metric-critery sprite sprite-arrow-' + ((itemMetrics.categories.security.tendency == '+')? 'right':'left' ) + '-' + ((itemMetrics.categories.security.tendency == '+')? 'yellow':'red' ) + '-60px'\">\n" +
+    "            <div ng-class=\"'security-block metric-critery sprite sprite-arrow-' + ((itemMetrics.categories.security.tendency == '+')? 'right':'left' ) + '-' + ((itemMetrics.categories.security.tendency == '+')? 'yellow':'red' ) + '-60px'\">\n" +
     "                <span ng-class=\"'color-' + ((itemMetrics.categories.security.tendency == '+')? 'black':'white')\">{{itemMetrics.categories.maintainability.percent * 100 | number: 0}}</span>\n" +
     "            </div>\n" +
     "            <p>Security</p>\n" +
     "        </div>\n" +
     "        <div class=\"col-md-7 col-sm-6 col-xs-6 text-center ellipsis-overflow\">\n" +
-    "            <div ng-class=\"'metric-critery sprite sprite-arrow-' + ((itemMetrics.categories.workmanship.tendency == '+')? 'right':'left' ) + '-' + ((itemMetrics.categories.workmanship.tendency == '+')? 'yellow':'red' ) + '-60px'\">\n" +
+    "            <div ng-class=\"'workmanship-block metric-critery sprite sprite-arrow-' + ((itemMetrics.categories.workmanship.tendency == '+')? 'right':'left' ) + '-' + ((itemMetrics.categories.workmanship.tendency == '+')? 'yellow':'red' ) + '-60px'\">\n" +
     "                <span ng-class=\"'color-' + ((itemMetrics.categories.workmanship.tendency == '+')? 'black':'white')\">{{itemMetrics.categories.workmanship.percent * 100 | number: 0}}</span>\n" +
     "            </div>\n" +
     "            <p>Workmanship</p>\n" +
@@ -201,7 +200,7 @@ $templateCache.put("components/directives/crossover-item/item_directives/test-me
     "        </div>\n" +
     "    </div>\n" +
     "    <div class=\"flow-bottom text-center\">\n" +
-    "        <coverage-percent percent=\"(item.data.measures[measurementIndex].covered_code)? item.data.measures[measurementIndex].covered_code : 0\"></coverage-percent>\n" +
+    "        <coverage-percent percent=\"(item.data.measures[measurementIndex].progress)? item.data.measures[measurementIndex].progress : 0\"></coverage-percent>\n" +
     "    </div>\n" +
     "</div>")
 }]);
