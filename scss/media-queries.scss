@@ -6,6 +6,36 @@
   float: left;
 }
 
+.text-left-xs {
+  text-align: left;
+}
+
+.text-center-xs {
+  text-align: center;
+}
+
+.text-right-xs {
+  text-align: right;
+}
+
+.crossover-item {
+  .item-field {
+    height: 30px;
+    line-height: 30px;
+  }
+
+  .measure_block {
+    .chart-container {
+      margin-top: 0px;
+
+      canvas {
+        max-width: 270px;
+        max-height: 135px;
+      }
+    }
+  }
+}
+
 /* Small devices (tablets, 768px and up) */
 @media (min-width: 768px) {
   .col-sm-15 {
@@ -13,9 +43,38 @@
     float: left;
   }
 
+  .text-left-sm {
+    text-align: left;
+  }
+
+  .text-center-sm {
+    text-align: center;
+  }
+
+  .text-right-sm {
+    text-align: right;
+  }
+
   .crossover-item {
-    .progress {
-      max-width: 66px;
+    .item-field {
+
+      .item-icon {
+        margin-top: 2px;
+      }
+
+      .progress {
+        max-width: 66px;
+      }
+    }
+
+    .measure-content {
+      padding-top: 5px;
+    }
+
+    .measure_block {
+      .chart-container {
+        margin-top: 18px;
+      }
     }
   }
 }
@@ -26,6 +85,18 @@
     width: 20%;
     float: left;
   }
+
+  .text-left-md {
+    text-align: left;
+  }
+
+  .text-center-md {
+    text-align: center;
+  }
+
+  .text-right-md {
+    text-align: right;
+  }
 }
 
 /* Large devices (large desktops, 1200px and up) */
@@ -33,5 +104,17 @@
   .col-lg-15 {
     width: 20%;
     float: left;
+  }
+
+  .text-left-lg {
+    text-align: left;
+  }
+
+  .text-center-lg {
+    text-align: center;
+  }
+
+  .text-right-lg {
+    text-align: right;
   }
 }

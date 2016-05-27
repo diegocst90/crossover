@@ -1,38 +1,42 @@
 <div ng-controller="ItemCtrl">
-    <div class="col-md-3 col-sm-6 col-xs-12">
+    <div class="item-field col-md-3 col-sm-6 col-xs-6">
         <div ng-class="'sprite item-icon sprite-' + ((item.isBuild())? 'computer':'wall' ) + '-' + item.getColorClass() + '-25px'"></div>
         <span style="vertical-align: top">{{ item.data.code }}</span>
     </div>
-    <div class="col-md-1 col-sm-2 col-xs-6 text-center">{{ item.data.owner }}</div>
-    <div class="col-md-3 col-sm-6 col-xs-12 text-center">{{ item.data.time_started | date: 'MM/dd/yyyy h:mma' | lowercase }}</div>
-    <div class="col-md-1 col-sm-2 col-xs-6 text-right">{{ item.getResultState() }}</div>
-    <div class="col-md-1 col-sm-2 col-xs-6 text-center">
+    <div class="item-field col-md-1 col-sm-2 col-xs-6 text-center">{{ item.data.owner }}</div>
+    <div class="item-field col-md-3 col-sm-4 col-xs-6 text-center">{{ item.data.time_started | date: 'MM/dd/yyyy h:mma' | lowercase }}</div>
+    <div class="item-field col-md-1 col-sm-4 col-xs-6 text-left text-center-xs text-center-md text-center-lg"><span class="visible-sm-inline visible-xs-inline">State: </span>{{ item.getResultState() }}</div>
+    <div ng-class="'item-field measure-content col-md-1 col-sm-2 col-xs-6 text-center ' + ((item.expanded)? 'hidden-xs':'')">
         <measure-bar class="animate-hide" ng-show="!item.expanded" measure-data="item.data.measures.metrics"></measure-bar>
     </div>
-    <div class="col-md-1 col-sm-2 col-xs-6 text-center">
+    <div ng-class="'item-field measure-content col-md-1 col-sm-2 col-xs-6 text-center ' + ((item.expanded)? 'hidden-xs':'')">
         <measure-bar class="animate-hide" ng-show="!item.expanded" measure-data="item.data.measures.build"></measure-bar>
     </div>
-    <div class="col-md-1 col-sm-2 col-xs-6 text-center">
+    <div ng-class="'item-field measure-content col-md-1 col-sm-2 col-xs-6 text-center ' + ((item.expanded)? 'hidden-xs':'')">
         <measure-bar class="animate-hide" ng-show="!item.expanded" measure-data="item.data.measures.unit_test"></measure-bar>
     </div>
-    <div class="col-md-1 col-sm-2 col-xs-6 text-center">
+    <div ng-class="'item-field measure-content col-md-1 col-sm-2 col-xs-6 text-center ' + ((item.expanded)? 'hidden-xs':'')">
         <measure-bar class="animate-hide" ng-show="!item.expanded" measure-data="item.data.measures.functional_test"></measure-bar>
     </div>
     <div uib-collapse="!item.expanded" class="col-md-12 col-sm-12 col-xs-12">
         <div class="row padded-top">
-            <div class="col-md-15 col-sm3">
+            <div class="col-md-15 col-sm-6 col-xs-12">
                 <metrics-measurement stop-event item-metrics="item.data.measures.metrics" uib-popover-template="'components/directives/crossover-item/popovers/_metrics-measurement.html'" popover-trigger="outsideClick"></metrics-measurement>
             </div>
-            <div class="col-md-15 col-sm3">
+            <div class="visible-xs-inline-block col-xs-12 padded-top"></div>
+            <div class="col-md-15 col-sm-6 col-xs-12">
                 <build-measurement stop-event item-build="item.data.measures.build" uib-popover-template="'components/directives/crossover-item/popovers/_build-measurement.html'" popover-trigger="outsideClick"></build-measurement>
             </div>
-            <div class="col-md-15 col-sm3">
+            <div class="visible-sm-inline-block visible-xs-inline-block col-sm-12 col-xs-12 padded-top"></div>
+            <div class="col-md-15 col-sm-4 col-xs-12">
                 <test-measurement stop-event title="Unit Test" item="item" measurement-index="unit_test" uib-popover-template="'components/directives/crossover-item/popovers/_unit-test-measurement.html'" popover-trigger="outsideClick"></test-measurement>
             </div>
-            <div class="col-md-15 col-sm3">
+            <div class="visible-xs-inline-block col-xs-12 padded-top"></div>
+            <div class="col-md-15 col-sm-4 col-xs-12">
                 <test-measurement stop-event title="Functional Test" item="item" measurement-index="functional_test" uib-popover-template="'components/directives/crossover-item/popovers/_functional-test-measurement.html'" popover-trigger="outsideClick"></test-measurement>
             </div>
-            <div class="col-md-15 col-sm3">
+            <div class="visible-xs-inline-block col-xs-12 padded-top"></div>
+            <div class="col-md-15 col-sm-4 col-xs-12">
                 <div class="padded-left padded-right">
                     <p class="text-center color-black">Result</p>
                     <div class="results">
