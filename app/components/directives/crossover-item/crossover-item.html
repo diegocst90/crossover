@@ -21,16 +21,16 @@
     <div uib-collapse="!item.expanded" class="col-md-12 col-sm-12 col-xs-12">
         <div class="row padded-top">
             <div class="col-md-15 col-sm3">
-                <metrics-measurement item-metrics="item.data.measures.metrics"></metrics-measurement>
+                <metrics-measurement stop-event item-metrics="item.data.measures.metrics" uib-popover-template="'components/directives/crossover-item/popovers/_metrics-measurement.html'" popover-trigger="outsideClick"></metrics-measurement>
             </div>
             <div class="col-md-15 col-sm3">
-                <build-measurement item-build="item.data.measures.build"></build-measurement>
+                <build-measurement stop-event item-build="item.data.measures.build" uib-popover-template="'components/directives/crossover-item/popovers/_build-measurement.html'" popover-trigger="outsideClick"></build-measurement>
             </div>
             <div class="col-md-15 col-sm3">
-                <test-measurement title="Unit Test" item="item" measurement-index="unit_test"></test-measurement>
+                <test-measurement stop-event title="Unit Test" item="item" measurement-index="unit_test" uib-popover-template="'components/directives/crossover-item/popovers/_unit-test-measurement.html'" popover-trigger="outsideClick"></test-measurement>
             </div>
             <div class="col-md-15 col-sm3">
-                <test-measurement title="Functional Test" item="item" measurement-index="functional_test"></test-measurement>
+                <test-measurement stop-event title="Functional Test" item="item" measurement-index="functional_test" uib-popover-template="'components/directives/crossover-item/popovers/_functional-test-measurement.html'" popover-trigger="outsideClick"></test-measurement>
             </div>
             <div class="col-md-15 col-sm3">
                 <div class="padded-left padded-right">

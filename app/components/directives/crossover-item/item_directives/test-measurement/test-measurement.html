@@ -2,7 +2,7 @@
     <h5>{{ title ? title : 'Test' }}</h5>
     <div class="row">
         <div class="text-center">
-            <canvas id="{{'unit-test-' + item.data.id}}"
+            <canvas id="{{measurementIndex + '-' + item.data.id}}"
                     height="100" width="200"
                     class="chart chart-pie"
                     chart-data="[passed, failed]" chart-labels="['Passed', 'Failed']" chart-colours="['#72ac4d', '#eb7d3b']">
