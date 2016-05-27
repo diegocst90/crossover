@@ -10,7 +10,7 @@
   /* Pending State */
   &.primary-color-gray {
     border: 2px solid $pending-border-color;
-    background-color: $pending-background-color;
+    @include row-gradient($pending-background-color);
     color: $pending-font-color;
 
     .progress .progress-bar {
@@ -20,12 +20,13 @@
 
     .measure_block {
       border-color: $pending-border-color;
+      @include row-measure-gradient($pending-background-color);
     }
   }
 
   &.primary-color-blue {
     border: 2px solid $running-border-color;
-    background-color: $running-background-color;
+    @include row-gradient($running-background-color);
     color: $running-font-color;
 
     .progress .progress-bar {
@@ -35,12 +36,13 @@
 
     .measure_block {
       border-color: $running-border-color;
+      @include row-measure-gradient($running-background-color);
     }
   }
 
   &.primary-color-green {
     border: 2px solid $done-border-color;
-    background-color: $done-background-color;
+    @include row-gradient($done-background-color);
     color: $done-font-color;
 
     .progress .progress-bar {
@@ -50,12 +52,13 @@
 
     .measure_block {
       border-color: $done-border-color;
+      @include row-measure-gradient($done-background-color);
     }
   }
 
   &.primary-color-red {
     border: 2px solid $wrong-border-color;
-    background-color: $wrong-background-color;
+    @include row-gradient($wrong-background-color);
     color: $wrong-font-color;
 
     .progress .progress-bar {
@@ -65,6 +68,7 @@
 
     .measure_block {
       border-color: $wrong-border-color;
+      @include row-measure-gradient($wrong-background-color);
     }
   }
 
@@ -101,6 +105,7 @@
   @include fade-in-out-animation("");
 
   .measure_block {
+    @include measure-block-shadow-box();
     border: 2px solid;
     height: 221px;
     position: relative;

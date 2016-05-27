@@ -56,7 +56,7 @@ angular.module('components.services.items')
             if (this.data.result_status == 0) return 'Pending';
             if (this.data.result_status == 1) return 'Running';
             if (this.data.result_status == 2) return (this.isBuild())? 'Completed' : 'Accepted'; //Completed or Accepted
-            if (this.data.result_status == 3) return (this.isBuild())? 'Fail' : 'Rejected'; //Fail or Rejected
+            if (this.data.result_status == 3) return (this.isBuild())? 'Failed' : 'Rejected'; //Failed or Rejected
 
             return '';
         };
@@ -65,7 +65,7 @@ angular.module('components.services.items')
             if (this.data.result_status == 0) return 'gray';
             if (this.data.result_status == 1) return 'blue';
             if (this.data.result_status == 2) return 'green'; //Completed or Accepted
-            if (this.data.result_status == 3) return 'red'; //Fail or Rejected
+            if (this.data.result_status == 3) return 'red'; //Failed or Rejected
 
             return '';
         };

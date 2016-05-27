@@ -1,0 +1,19 @@
+<div class="measure_block padded-left padded-right">
+    <h5>Unit Test</h5>
+    <div class="row">
+        <div class="text-center">
+            <canvas id="{{'unit-test-' + item.data.id}}"
+                    height="100" width="200"
+                    class="chart chart-pie"
+                    chart-data="[140,10]" chart-labels="['Passed','Failed']" chart-colours="['#72ac4d', '#eb7d3b']">
+            </canvas>
+        </div>
+        <div class="col-md-6 col-md-offset-6 text-center aligned-to-graphic">
+            <color-percent extra-class="'x-large'" percent="0.75"></color-percent>
+            <p class="text-center x-small color-black">tests passed</p>
+        </div>
+    </div>
+    <div class="flow-bottom text-center">
+        <coverage-percent percent="0.59"></coverage-percent>
+    </div>
+</div>
