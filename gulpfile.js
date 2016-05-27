@@ -28,7 +28,7 @@ gulp.task('sass', function(done) {
 });
 
 gulp.task('html2', function() {
-    gulp.src('./app/components/directives/**/*.html')
+    gulp.src(['./app/components/directives/**/*.html','./app/items_data_source.js'])
         .pipe(html2js('crossover-html2-cache.js', {
             adapter: 'angular',
             base: './app',

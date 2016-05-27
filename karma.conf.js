@@ -5,13 +5,18 @@ module.exports = function(config){
 
     files : [
       'app/bower_components/angular/angular.js',
+      'app/bower_components/angular-animate/angular-animate.js',
+      'app/bower_components/Chart.js/Chart.js',
+      'app/bower_components/angular-chart/angular-chart.js',
+      'app/bower_components/angular-loader/angular-loader.js',
       'app/bower_components/angular-ui-router/release/angular-ui-router.js',
+      'app/bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
       'app/bower_components/angular-mocks/angular-mocks.js',
       'app/components/dist/crossover-html2-cache.js',
+      'app/app.js',
       'app/services/**/*.js',
       'app/components/**/*.js',
-      'app/modules/**/*.js',
-      'app/app.js'
+      'app/modules/**/*.js'
     ],
 
     autoWatch : true,

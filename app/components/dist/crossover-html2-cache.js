@@ -154,6 +154,27 @@ $templateCache.put("components/directives/crossover-item/item_directives/executi
     "    </div>\n" +
     "</div>")
 
+$templateCache.put("components/directives/crossover-item/item_directives/test-measurement/test-measurement.html","<div class=\"measure_block padded-left padded-right\">\n" +
+    "    <h5>{{ title ? title : 'Test' }}</h5>\n" +
+    "    <div class=\"row\">\n" +
+    "        <div class=\"text-center\">\n" +
+    "            <canvas id=\"{{measurementIndex + '-' + item.data.id}}\"\n" +
+    "                    height=\"90\" width=\"180\"\n" +
+    "                    class=\"chart chart-pie\"\n" +
+    "                    chart-options=\"{'responsive': $root.chartsResponsive}\"\n" +
+    "                    chart-data=\"[passed, failed]\" chart-labels=\"['Passed', 'Failed']\" chart-colours=\"['#72ac4d', '#eb7d3b']\">\n" +
+    "            </canvas>\n" +
+    "        </div>\n" +
+    "        <div class=\"col-md-6 col-md-offset-6 col-sm-5 col-sm-offset-7 col-xs-4 col-xs-offset-8 text-center aligned-to-graphic\">\n" +
+    "            <color-percent extra-class=\"(passed < tests_total)? 'x-large' : 'x-medium'\" percent=\"passed/tests_total\"></color-percent>\n" +
+    "            <p class=\"text-center x-small color-black\">tests passed</p>\n" +
+    "        </div>\n" +
+    "    </div>\n" +
+    "    <div class=\"flow-bottom text-center\">\n" +
+    "        <coverage-percent percent=\"(item.data.measures[measurementIndex].progress)? item.data.measures[measurementIndex].progress : 0\"></coverage-percent>\n" +
+    "    </div>\n" +
+    "</div>")
+
 $templateCache.put("components/directives/crossover-item/item_directives/metrics-measurement/metrics-measurement.html","<div class=\"measure_block padded-left padded-right\">\n" +
     "    <h5>Metrics</h5>\n" +
     "    <div class=\"row\">\n" +
@@ -184,25 +205,88 @@ $templateCache.put("components/directives/crossover-item/item_directives/metrics
     "    </div>\n" +
     "</div>")
 
-$templateCache.put("components/directives/crossover-item/item_directives/test-measurement/test-measurement.html","<div class=\"measure_block padded-left padded-right\">\n" +
-    "    <h5>{{ title ? title : 'Test' }}</h5>\n" +
-    "    <div class=\"row\">\n" +
-    "        <div class=\"text-center\">\n" +
-    "            <canvas id=\"{{measurementIndex + '-' + item.data.id}}\"\n" +
-    "                    height=\"90\" width=\"180\"\n" +
-    "                    class=\"chart chart-pie\"\n" +
-    "                    chart-options=\"{'responsive': $root.chartsResponsive}\"\n" +
-    "                    chart-data=\"[passed, failed]\" chart-labels=\"['Passed', 'Failed']\" chart-colours=\"['#72ac4d', '#eb7d3b']\">\n" +
-    "            </canvas>\n" +
-    "        </div>\n" +
-    "        <div class=\"col-md-6 col-md-offset-6 col-sm-5 col-sm-offset-7 col-xs-4 col-xs-offset-8 text-center aligned-to-graphic\">\n" +
-    "            <color-percent extra-class=\"(passed < tests_total)? 'x-large' : 'x-medium'\" percent=\"passed/tests_total\"></color-percent>\n" +
-    "            <p class=\"text-center x-small color-black\">tests passed</p>\n" +
-    "        </div>\n" +
-    "    </div>\n" +
-    "    <div class=\"flow-bottom text-center\">\n" +
-    "        <coverage-percent percent=\"(item.data.measures[measurementIndex].progress)? item.data.measures[measurementIndex].progress : 0\"></coverage-percent>\n" +
-    "    </div>\n" +
-    "</div>")
+$templateCache.put("items_data_source.js","[\n" +
+    "    {\n" +
+    "        \"id\": \"ID303\",\n" +
+    "        \"type\": \"build\",\n" +
+    "        \"code\": \"ABC\",\n" +
+    "        \"owner\": \"xxx\"\n" +
+    "    },\n" +
+    "    {\n" +
+    "        \"id\": \"ID304\",\n" +
+    "        \"type\": \"firewall\",\n" +
+    "        \"code\": \"GUTH-XXS\",\n" +
+    "        \"owner\": \"Dj Tavo\",\n" +
+    "        \"result_status\": 1,\n" +
+    "        \"measures\": {\n" +
+    "            \"metrics\": {\n" +
+    "                \"progress\": 0.27,\n" +
+    "                \"categories\": {\n" +
+    "                    \"test\": {\"percent\": 0.65, \"tendency\": \"+\"},\n" +
+    "                    \"maintainability\": {\"percent\": 0.24, \"tendency\": \"-\"},\n" +
+    "                    \"security\": {\"percent\": 0.78, \"tendency\": \"+\"},\n" +
+    "                    \"workmanship\": {\"percent\": 0.56, \"tendency\": \"-\"}\n" +
+    "                }\n" +
+    "            },\n" +
+    "            \"build\": {\n" +
+    "                \"progress\": 0.67,\n" +
+    "                \"failed\": false,\n" +
+    "                \"categories\": {\n" +
+    "                    \"debug\": true,\n" +
+    "                    \"release\": true\n" +
+    "                },\n" +
+    "                \"last_update\": 5304534545\n" +
+    "            },\n" +
+    "            \"unit_test\": {\n" +
+    "                \"progress\": 0.87,\n" +
+    "                \"failed\": false,\n" +
+    "                \"categories\": {\n" +
+    "                    \"passed\": 503,\n" +
+    "                    \"failed\": 54\n" +
+    "                }\n" +
+    "            },\n" +
+    "            \"functional_test\": {\n" +
+    "                \"progress\": 0.47,\n" +
+    "                \"failed\": false,\n" +
+    "                \"categories\": {\n" +
+    "                    \"passed\": 103,\n" +
+    "                    \"failed\": 224\n" +
+    "                }\n" +
+    "            }\n" +
+    "        }\n" +
+    "    },\n" +
+    "    {\n" +
+    "        \"id\": \"ID305\",\n" +
+    "        \"type\": \"build\",\n" +
+    "        \"code\": \"GUTH-EPD\",\n" +
+    "        \"owner\": \"diegocst90\",\n" +
+    "        \"time_started\": 5304534545,\n" +
+    "        \"result_status\": 2\n" +
+    "    },\n" +
+    "    {\n" +
+    "        \"id\": \"ID306\",\n" +
+    "        \"type\": \"firewall\",\n" +
+    "        \"code\": \"GUTH-EPD\",\n" +
+    "        \"owner\": \"picmonic\",\n" +
+    "        \"time_started\": 5314534545,\n" +
+    "        \"result_status\": 2\n" +
+    "    },\n" +
+    "    {\n" +
+    "        \"id\": \"ID307\",\n" +
+    "        \"type\": \"build\",\n" +
+    "        \"code\": \"UX-7053\",\n" +
+    "        \"owner\": \"diegocst90\",\n" +
+    "        \"time_started\": 404934923,\n" +
+    "        \"result_status\": 3\n" +
+    "    },\n" +
+    "    {\n" +
+    "        \"id\": \"ID308\",\n" +
+    "        \"type\": \"firewall\",\n" +
+    "        \"code\": \"PSD-3DE\",\n" +
+    "        \"owner\": \"picmonic\",\n" +
+    "        \"time_started\": 404934923,\n" +
+    "        \"result_status\": 3\n" +
+    "    }\n" +
+    "]")
 }]);
 })();

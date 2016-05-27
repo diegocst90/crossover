@@ -6,7 +6,9 @@ describe('crossover.home module', function() {
 
     describe('Home controller', function(){
 
-        beforeEach(module('crossover.items'));
+        beforeEach(function() {
+            module('crossover.items');
+        });
 
         it('should load Home controller', inject(function($rootScope, $controller) {
             //spec body
@@ -15,26 +17,24 @@ describe('crossover.home module', function() {
             expect(homeCtrl).toBeDefined();
         }));
 
-        it('should close other details if user will open another item', inject(function($rootScope, $controller) {
-            var $injector = angular.injector(['crossover.items']);
-            var ItemsCollection = $injector.get('ItemsCollection');
-
-            ItemsCollection.addDemoData();
-
+        it('should close other details if user will open another item', inject(function($rootScope, $controller, ItemObject) {
             //spec body
             var scope = $rootScope.$new();
-            scope.items_collection = ItemsCollection.items;
-
             var homeCtrl = $controller('HomeCtrl', {$scope: scope});
-            scope.openItemDetails(scope.items_collection[2]);
+
+            var item1 = new ItemObject({id: 'DEMO1'});
+            var item2 = new ItemObject({id: 'DEMO2'});
+            scope.items_collection = [item1, item2];
+
+            scope.openItemDetails(scope.items_collection[1]);
 
             //Check if it's expanded
-            expect(scope.items_collection[2].expanded).toBe(true);
+            expect(scope.items_collection[1].expanded).toBe(true);
 
             //Check if it's expanded and the previous collapsed
             scope.openItemDetails(scope.items_collection[0]);
             expect(scope.items_collection[0].expanded).toBe(true);
-            expect(scope.items_collection[2].expanded).toBe(false);
+            expect(scope.items_collection[1].expanded).toBe(false);
         }));
 
     });
