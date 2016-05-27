@@ -25,10 +25,12 @@ $wrong-background-color: #fbe5e5;
 $wrong-font-color: #c52c39;
 $wrong-measure-color: #be0712;
 
-/* Warning colors */
+/* Ok, Warning and Dangerous colors */
 $ok-font-color: #a1c444;
 $warning-font-color: #be8f1f;
 $danger-font-color: #bc0008;
+$not-passed-font-color: #eb7d3b;
+/*
 
 /* Default fadeIn/fadeOut animation */
 @mixin fade-in-out-animation() {
@@ -50,4 +52,14 @@ $danger-font-color: #bc0008;
   &.animate-repeat.ng-enter.ng-enter-active {
     opacity:1;
   }
+}
+
+/* Opacity definitions */
+@mixin opacity($level) {
+  -moz-opacity: $level;
+  -khtml-opacity: $level;
+  opacity: $level;
+  -ms-filter:"progid:DXImageTransform.Microsoft.Alpha"(Opacity=$level*100);
+  filter: progid:DXImageTransform.Microsoft.Alpha(opacity=$level*100);
+  filter: alpha(opacity=$level*100);
 }

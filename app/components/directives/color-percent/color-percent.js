@@ -13,7 +13,8 @@ angular.module('crossover')
     return {
         restrict: 'E',
         scope: {
-            percent: '='
+            percent: '=',
+            className: '='
         },
         templateUrl: 'components/directives/color-percent/color-percent.html'
     }

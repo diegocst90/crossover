@@ -1,0 +1,11 @@
+<div class="padded-left padded-right">
+    <div class="coverage-bar">
+        <div ng-style="{'width': (percent * 100) + '%'}" class="pull-left filled"></div>
+        <div ng-style="{'width': ((1-percent) * 100) + '%'}" class="pull-left unfilled"></div>
+        <p class="x-small text-center legend">
+            <strong><color-percent class-name="x-small" percent="percent"></color-percent></strong>
+            <br/>
+            code covered
+        </p>
+    </div>
+</div>
