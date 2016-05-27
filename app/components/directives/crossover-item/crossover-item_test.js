@@ -42,8 +42,6 @@ describe('crossover.directives crossoverItem', function() {
         var queryResult = element[0].querySelectorAll('.item-field .item-icon');
         var iconDOM = angular.element(queryResult[0]);
         expect(iconDOM.attr('class')).toContain("sprite-wall-green-25px");
-
-
     });
 
     it('should show the right icon to Firewalls that were rejected', function() {
