@@ -43,22 +43,22 @@ $not-passed-font-color: #eb7d3b;
 
 /* Default fadeIn/fadeOut animation */
 @mixin fade-in-out-animation($inner_class) {
-  &.animate-repeat.ng-move $inner_class,
-  &.animate-repeat.ng-enter $inner_class,
-  &.animate-repeat.ng-leave $inner_class {
+  &.animate-repeat.ng-move #{$inner_class},
+  &.animate-repeat.ng-enter #{$inner_class},
+  &.animate-repeat.ng-leave #{$inner_class} {
     -webkit-transition:all linear 0.5s;
     transition:all linear 0.5s;
   }
 
-  &.animate-repeat.ng-leave.ng-leave-active $inner_class,
-  &.animate-repeat.ng-move $inner_class,
-  &.animate-repeat.ng-enter $inner_class {
+  &.animate-repeat.ng-leave.ng-leave-active #{$inner_class},
+  &.animate-repeat.ng-move #{$inner_class},
+  &.animate-repeat.ng-enter #{$inner_class} {
     @include opacity(0);
   }
 
-  &.animate-repeat.ng-leave $inner_class,
-  &.animate-repeat.ng-move.ng-move-active $inner_class,
-  &.animate-repeat.ng-enter.ng-enter-active $inner_class {
+  &.animate-repeat.ng-leave #{$inner_class},
+  &.animate-repeat.ng-move.ng-move-active #{$inner_class},
+  &.animate-repeat.ng-enter.ng-enter-active #{$inner_class} {
   @include opacity(1);
   }
 }
