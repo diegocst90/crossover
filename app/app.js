@@ -5,6 +5,7 @@ angular.module('crossover', [
   'ui.router',
   'ui.bootstrap',
   'ngAnimate',
+  'chart.js',
   'components.services.items',
   'crossover.home',
   'crossover.contact',

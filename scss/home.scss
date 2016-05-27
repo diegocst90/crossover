@@ -1,7 +1,54 @@
+@import 'variables';
+
+/* Color texts */
+.color-green {
+  color: $done-font-color;
+}
+
+.color-red {
+  color: $wrong-font-color;
+}
+
+.color-gray {
+  color: $pending-font-color;
+}
+
+.color-blue {
+  color: $running-font-color;
+}
+
+.color-yellow, .color-warning {
+  color: $warning-font-color;
+}
+
+.color-ok {
+  color: $ok-font-color;
+}
+
+.color-danger {
+  color: $danger-font-color;
+}
+
+.color-white {
+  color: $crossover-white;
+}
+
+.color-black {
+  color: $crossover-black;
+}
+
 .crossover-header {
   p.lead {
     margin-bottom: 5px;
   }
+}
+
+.x-large {
+  font-size: 30px;
+}
+
+.x-small {
+  font-size: 11px;
 }
 
 /* Added 5 columns row CSS entries */
@@ -65,6 +112,12 @@
   background-position: -215px -5px;
 }
 
+.sprite-arrow-down-yellow-60px {
+  width: 60px;
+  height: 60px;
+  background-position: -285px -5px;
+}
+
 .sprite-arrow-left-blue-60px {
   width: 60px;
   height: 60px;
@@ -87,6 +140,12 @@
   width: 60px;
   height: 60px;
   background-position: -215px -75px;
+}
+
+.sprite-arrow-left-yellow-60px {
+  width: 60px;
+  height: 60px;
+  background-position: -285px -75px;
 }
 
 .sprite-arrow-right-blue-60px {
@@ -113,110 +172,134 @@
   background-position: -215px -145px;
 }
 
+.sprite-arrow-right-yellow-60px {
+  width: 60px;
+  height: 60px;
+  background-position: -285px -145px;
+}
+
 .sprite-arrow-up-blue-60px {
   width: 60px;
   height: 60px;
-  background-position: -5px -215px;
+  background-position: -4px -215px;
 }
 
 .sprite-arrow-up-gray-60px {
   width: 60px;
   height: 60px;
-  background-position: -75px -215px;
+  background-position: -74px -215px;
 }
 
 .sprite-arrow-up-green-60px {
   width: 60px;
   height: 60px;
-  background-position: -145px -215px;
+  background-position: -144px -215px;
 }
 
 .sprite-arrow-up-red-60px {
   width: 60px;
   height: 60px;
-  background-position: -215px -215px;
+  background-position: -214px -215px;
 }
 
-.sprite-computer-gray-25px {
-  width: 25px;
-  height: 25px;
-  background-position: -285px -5px;
-}
-
-.sprite-computer-gray-60px {
+.sprite-arrow-up-yellow-60px {
   width: 60px;
   height: 60px;
-  background-position: -320px -5px;
+  background-position: -284px -215px;
 }
 
-.sprite-computer-green-25px {
-  width: 25px;
-  height: 25px;
-  background-position: -285px -75px;
-}
-
-.sprite-computer-green-60px {
-  width: 60px;
-  height: 60px;
-  background-position: -320px -75px;
-}
-
-.sprite-computer-red-25px {
-  width: 25px;
-  height: 25px;
-  background-position: -285px -145px;
-}
-
-.sprite-computer-red-60px {
-  width: 60px;
-  height: 60px;
-  background-position: -320px -145px;
-}
-
-.sprite-wall-blue-25px {
-  width: 25px;
-  height: 25px;
-  background-position: -285px -215px;
-}
-
-.sprite-wall-blue-60px {
-  width: 60px;
-  height: 60px;
-  background-position: -320px -215px;
-}
-
-.sprite-wall-gray-25px {
+.sprite-computer-blue-25px {
   width: 25px;
   height: 25px;
   background-position: -5px -285px;
 }
 
-.sprite-wall-gray-60px {
+.sprite-computer-blue-60px {
   width: 60px;
   height: 60px;
   background-position: -40px -285px;
 }
 
-.sprite-wall-green-25px {
+.sprite-computer-gray-25px {
   width: 25px;
   height: 25px;
   background-position: -110px -285px;
 }
 
-.sprite-wall-green-60px {
+.sprite-computer-gray-60px {
   width: 60px;
   height: 60px;
   background-position: -145px -285px;
 }
 
-.sprite-wall-red-25px {
+.sprite-computer-green-25px {
   width: 25px;
   height: 25px;
   background-position: -215px -285px;
 }
 
-.sprite-wall-red-60px {
+.sprite-computer-green-60px {
   width: 60px;
   height: 60px;
   background-position: -250px -285px;
+}
+
+.sprite-computer-red-25px {
+  width: 25px;
+  height: 25px;
+  background-position: -320px -285px;
+}
+
+.sprite-computer-red-60px {
+  width: 60px;
+  height: 60px;
+  background-position: -355px -5px;
+}
+
+.sprite-wall-blue-25px {
+  width: 25px;
+  height: 25px;
+  background-position: -355px -75px;
+}
+
+.sprite-wall-blue-60px {
+  width: 60px;
+  height: 60px;
+  background-position: -355px -110px;
+}
+
+.sprite-wall-gray-25px {
+  width: 25px;
+  height: 25px;
+  background-position: -390px -75px;
+}
+
+.sprite-wall-gray-60px {
+  width: 60px;
+  height: 60px;
+  background-position: -355px -180px;
+}
+
+.sprite-wall-green-25px {
+  width: 25px;
+  height: 25px;
+  background-position: -355px -250px;
+}
+
+.sprite-wall-green-60px {
+  width: 60px;
+  height: 60px;
+  background-position: -355px -285px;
+}
+
+.sprite-wall-red-25px {
+  width: 25px;
+  height: 25px;
+  background-position: -390px -250px;
+}
+
+.sprite-wall-red-60px {
+  width: 60px;
+  height: 60px;
+  background-position: -5px -355px;
 }

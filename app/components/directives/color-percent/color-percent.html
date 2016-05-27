@@ -1,0 +1,3 @@
+<span class="x-large color-ok" ng-if="percent >= 0.75">{{percent*100 | number : 0 }}%</span>
+<span class="x-large color-warning" ng-if="percent >= 0.5 && percent < 0.75">{{percent*100 | number : 0 }}%</span>
+<span class="x-large color-danger" ng-if="percent < 0.5">{{percent*100 | number : 0 }}%</span>

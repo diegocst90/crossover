@@ -119,5 +119,43 @@
 
   .measure_block {
     border: 2px solid;
+    height: 221px;
+    position: relative;
+
+    .extra-margin {
+      margin-top: 35px;
+    }
+
+    .metric-critery, .build-critery {
+      width: 60px;
+      height: 60px;
+      line-height: 60px;
+      color: $crossover-white;
+      margin: 0 auto;
+    }
+
+    .metric-critery + p, .build-critery + p {
+      color: $crossover-black;
+    }
+
+    .flow-bottom {
+      position: absolute;
+      bottom: 10px;
+      left: 0px;
+      right: 0px;
+      color: $crossover-black;
+    }
+
+    .chart-container {
+      position: absolute;
+      left: -36px;
+      margin-top: 18px;
+    }
+
+    .aligned-to-graphic {
+      margin-top: 36px;
+    }
   }
+
+
 }

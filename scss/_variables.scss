@@ -1,3 +1,6 @@
+$crossover-white: #fff;
+$crossover-black: #000;
+
 /* Pending State colors */
 $pending-border-color: #cacbcd;
 $pending-background-color: #f7f9fc;
@@ -21,6 +24,11 @@ $wrong-border-color: #bc0008;
 $wrong-background-color: #fbe5e5;
 $wrong-font-color: #c52c39;
 $wrong-measure-color: #be0712;
+
+/* Warning colors */
+$ok-font-color: #a1c444;
+$warning-font-color: #be8f1f;
+$danger-font-color: #bc0008;
 
 /* Default fadeIn/fadeOut animation */
 @mixin fade-in-out-animation() {

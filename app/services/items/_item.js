@@ -36,6 +36,10 @@ angular.module('components.services.items')
             return (this.data.type == 'firewall');
         };
 
+        item.prototype.isPending = function() {
+            return (this.data.result_status == 0);
+        };
+
         item.prototype.getItemPicture = function() {
             return (this.isBuild())? 'computer-' + this.getColorClass() + '.svg' : 'wall-' + this.getColorClass() + '.svg';
         };
