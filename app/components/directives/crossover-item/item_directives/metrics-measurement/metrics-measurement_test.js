@@ -9,7 +9,12 @@ describe('crossover.directives metricsMeasurement', function() {
         $scope;
 
     // Load the myApp module, which contains the directive
-    beforeEach(module('crossover.directives'), module('crossover.items'), module('crossover'));
+    beforeEach(module('crossover.items'), module('crossover'));
+
+    beforeEach(function() {
+        module('crossover.directives');
+        module('crossover-html2');
+    });
 
     // Store references to $rootScope and $compile
     // so they are available to all tests in this describe block

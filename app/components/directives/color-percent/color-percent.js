@@ -7,7 +7,7 @@
  * (c) 2016 Diego Castillo
  * License: MIT
  */
-angular.module('crossover.directives', ["crossover-html2"])
+angular.module('crossover.directives', [])
 
 .directive('colorPercent', [function(){
     return {

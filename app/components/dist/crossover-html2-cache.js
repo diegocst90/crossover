@@ -154,27 +154,6 @@ $templateCache.put("components/directives/crossover-item/item_directives/executi
     "    </div>\n" +
     "</div>")
 
-$templateCache.put("components/directives/crossover-item/item_directives/test-measurement/test-measurement.html","<div class=\"measure_block padded-left padded-right\">\n" +
-    "    <h5>{{ title ? title : 'Test' }}</h5>\n" +
-    "    <div class=\"row\">\n" +
-    "        <div class=\"text-center\">\n" +
-    "            <canvas id=\"{{measurementIndex + '-' + item.data.id}}\"\n" +
-    "                    height=\"90\" width=\"180\"\n" +
-    "                    class=\"chart chart-pie\"\n" +
-    "                    chart-options=\"{'responsive': $root.chartsResponsive}\"\n" +
-    "                    chart-data=\"[passed, failed]\" chart-labels=\"['Passed', 'Failed']\" chart-colours=\"['#72ac4d', '#eb7d3b']\">\n" +
-    "            </canvas>\n" +
-    "        </div>\n" +
-    "        <div class=\"col-md-6 col-md-offset-6 col-sm-5 col-sm-offset-7 col-xs-4 col-xs-offset-8 text-center aligned-to-graphic\">\n" +
-    "            <color-percent extra-class=\"(passed < tests_total)? 'x-large' : 'x-medium'\" percent=\"passed/tests_total\"></color-percent>\n" +
-    "            <p class=\"text-center x-small color-black\">tests passed</p>\n" +
-    "        </div>\n" +
-    "    </div>\n" +
-    "    <div class=\"flow-bottom text-center\">\n" +
-    "        <coverage-percent percent=\"(item.data.measures[measurementIndex].progress)? item.data.measures[measurementIndex].progress : 0\"></coverage-percent>\n" +
-    "    </div>\n" +
-    "</div>")
-
 $templateCache.put("components/directives/crossover-item/item_directives/metrics-measurement/metrics-measurement.html","<div class=\"measure_block padded-left padded-right\">\n" +
     "    <h5>Metrics</h5>\n" +
     "    <div class=\"row\">\n" +
@@ -202,6 +181,27 @@ $templateCache.put("components/directives/crossover-item/item_directives/metrics
     "            </div>\n" +
     "            <p>Workmanship</p>\n" +
     "        </div>\n" +
+    "    </div>\n" +
+    "</div>")
+
+$templateCache.put("components/directives/crossover-item/item_directives/test-measurement/test-measurement.html","<div class=\"measure_block padded-left padded-right\">\n" +
+    "    <h5>{{ title ? title : 'Test' }}</h5>\n" +
+    "    <div class=\"row\">\n" +
+    "        <div class=\"text-center\">\n" +
+    "            <canvas id=\"{{measurementIndex + '-' + item.data.id}}\"\n" +
+    "                    height=\"90\" width=\"180\"\n" +
+    "                    class=\"chart chart-pie\"\n" +
+    "                    chart-options=\"{'responsive': $root.chartsResponsive}\"\n" +
+    "                    chart-data=\"[passed, failed]\" chart-labels=\"['Passed', 'Failed']\" chart-colours=\"['#72ac4d', '#eb7d3b']\">\n" +
+    "            </canvas>\n" +
+    "        </div>\n" +
+    "        <div class=\"col-md-6 col-md-offset-6 col-sm-5 col-sm-offset-7 col-xs-4 col-xs-offset-8 text-center aligned-to-graphic\">\n" +
+    "            <color-percent extra-class=\"(passed < tests_total)? 'x-large' : 'x-medium'\" percent=\"passed/tests_total\"></color-percent>\n" +
+    "            <p class=\"text-center x-small color-black\">tests passed</p>\n" +
+    "        </div>\n" +
+    "    </div>\n" +
+    "    <div class=\"flow-bottom text-center\">\n" +
+    "        <coverage-percent percent=\"(item.data.measures[measurementIndex].progress)? item.data.measures[measurementIndex].progress : 0\"></coverage-percent>\n" +
     "    </div>\n" +
     "</div>")
 

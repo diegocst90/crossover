@@ -8,8 +8,7 @@ angular.module('crossover', [
   'chart.js',
   'crossover.items',
   'crossover.directives',
-  'crossover.home',
-  'crossover-html2'
+  'crossover.home'
 ]).
 run(function($rootScope) {
     $rootScope.chartsResponsive = true;
