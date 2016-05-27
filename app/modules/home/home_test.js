@@ -6,7 +6,7 @@ describe('crossover.home module', function() {
 
     describe('Home controller', function(){
 
-        beforeEach(module('components.items'));
+        beforeEach(module('crossover.items'));
 
         it('should load Home controller', inject(function($rootScope, $controller) {
             //spec body

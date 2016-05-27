@@ -7,8 +7,11 @@ module.exports = function(config){
       'app/bower_components/angular/angular.js',
       'app/bower_components/angular-ui-router/release/angular-ui-router.js',
       'app/bower_components/angular-mocks/angular-mocks.js',
+      'app/services/**/*.js',
+      'app/components/dist/crossover-html2-cache.js',
       'app/components/**/*.js',
-      'app/modules/**/*.js'
+      'app/modules/**/*.js',
+      'app/app.js'
     ],
 
     autoWatch : true,

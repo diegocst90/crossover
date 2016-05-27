@@ -8,7 +8,7 @@
  * License: MIT
  */
 
-angular.module('components.services.items')
+angular.module('crossover.items', [])
 .factory('ItemObject',['$q', '$state',
     function($q, $state){
         var item = function (data) {

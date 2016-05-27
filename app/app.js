@@ -6,7 +6,8 @@ angular.module('crossover', [
   'ui.bootstrap',
   'ngAnimate',
   'chart.js',
-  'components.services.items',
+  'crossover.items',
+  'crossover.directives',
   'crossover.home'
 ]).
 config(function($stateProvider, $urlRouterProvider, $httpProvider) {

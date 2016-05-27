@@ -7,7 +7,7 @@
  * (c) 2016 Diego Castillo
  * License: MIT
  */
-angular.module('crossover')
+angular.module('crossover.directives')
 
 .directive('stopEvent', function() {
     function stopEvent(e) {

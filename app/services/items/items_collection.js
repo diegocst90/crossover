@@ -7,7 +7,7 @@
  * License: MIT
  */
 
-angular.module('components.services.items',[])
+angular.module('crossover.items')
 
 .service('ItemsCollection', ['$q', '$http', '$cacheFactory', '$state', '$stateParams',
 function($q, $http, $cacheFactory, $state, $stateParams) {

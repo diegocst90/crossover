@@ -6,6 +6,7 @@ var sass = require('gulp-sass');
 var minifyCss = require('gulp-minify-css');
 var rename = require('gulp-rename');
 var sh = require('shelljs');
+var html2js = require('gulp-html2js');
 
 var paths = {
   sass: ['./scss/*.scss']
@@ -24,6 +25,16 @@ gulp.task('sass', function(done) {
     .pipe(rename({ extname: '.min.css' }))
     .pipe(gulp.dest('./app/assets/css/'))
     .on('end', done);
+});
+
+gulp.task('html2', function() {
+    gulp.src('./app/components/directives/**/*.html')
+        .pipe(html2js('crossover-html2-cache.js', {
+            adapter: 'angular',
+            base: './app',
+            name: 'crossover-html2'
+        }))
+        .pipe(gulp.dest('./app/components/dist/'));
 });
 
 gulp.task('watch', function() {
