@@ -11,6 +11,9 @@ angular.module('crossover', [
   'crossover.home',
   'crossover-html2'
 ]).
+run(function($rootScope) {
+    $rootScope.chartsResponsive = true;
+}).
 config(function($stateProvider, $urlRouterProvider, $httpProvider) {
     // if none of the above states are matched, use this as the fallback
     $urlRouterProvider.otherwise('/home');

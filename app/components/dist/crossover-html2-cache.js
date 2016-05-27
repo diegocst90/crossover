@@ -191,6 +191,7 @@ $templateCache.put("components/directives/crossover-item/item_directives/test-me
     "            <canvas id=\"{{measurementIndex + '-' + item.data.id}}\"\n" +
     "                    height=\"90\" width=\"180\"\n" +
     "                    class=\"chart chart-pie\"\n" +
+    "                    chart-options=\"{'responsive': $root.chartsResponsive}\"\n" +
     "                    chart-data=\"[passed, failed]\" chart-labels=\"['Passed', 'Failed']\" chart-colours=\"['#72ac4d', '#eb7d3b']\">\n" +
     "            </canvas>\n" +
     "        </div>\n" +

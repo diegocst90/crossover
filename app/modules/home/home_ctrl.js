@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('crossover.home', ['ui.router'])
-    .controller('HomeCtrl', ['$scope','ItemsCollection','ItemObject', function($scope, ItemsCollection, ItemObject) {
+    .controller('HomeCtrl', ['$scope', '$rootScope', '$stateParams','ItemsCollection','ItemObject', function($scope, $rootScope, $stateParams, ItemsCollection, ItemObject) {
         ItemsCollection.addDemoData();
 
         $scope.items_collection = ItemsCollection.items;
@@ -11,6 +11,9 @@ angular.module('crossover.home', ['ui.router'])
         $scope.itemsPerPage = $scope.viewby;
         $scope.maxSize = 10; //Number of pager buttons to show
 
+        if ($stateParams.no_responsive) {
+            $rootScope.chartsResponsive = false;
+        }
         /*
          * Collapse all details
          */

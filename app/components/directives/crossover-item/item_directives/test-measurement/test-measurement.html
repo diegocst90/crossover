@@ -5,6 +5,7 @@
             <canvas id="{{measurementIndex + '-' + item.data.id}}"
                     height="90" width="180"
                     class="chart chart-pie"
+                    chart-options="{'responsive': $root.chartsResponsive}"
                     chart-data="[passed, failed]" chart-labels="['Passed', 'Failed']" chart-colours="['#72ac4d', '#eb7d3b']">
             </canvas>
         </div>
