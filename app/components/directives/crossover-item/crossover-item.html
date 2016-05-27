@@ -21,16 +21,16 @@
     <div uib-collapse="!item.expanded" class="col-md-12 col-sm-12 col-xs-12">
         <div class="row padded-top">
             <div class="col-md-15 col-sm3">
-                <metrics-measurement item="item"></metrics-measurement>
+                <metrics-measurement item-metrics="item.data.measures.metrics"></metrics-measurement>
             </div>
             <div class="col-md-15 col-sm3">
-                <build-measurement item="item"></build-measurement>
+                <build-measurement item-build="item.data.measures.build"></build-measurement>
             </div>
             <div class="col-md-15 col-sm3">
-                <unit-test-measurement item="item"></unit-test-measurement>
+                <test-measurement title="Unit Test" item="item" measurement-index="unit_test"></test-measurement>
             </div>
             <div class="col-md-15 col-sm3">
-                <functional-test-measurement item="item"></functional-test-measurement>
+                <test-measurement title="Functional Test" item="item" measurement-index="functional_test"></test-measurement>
             </div>
             <div class="col-md-15 col-sm3">
                 <div class="padded-left padded-right">

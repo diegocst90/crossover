@@ -20,10 +20,43 @@ angular.module('components.services.items')
                 time_started: Number(new Date()),
                 result_status: 0, //0 => Pending, 1 => Running, 2 => Finished (Completed or Accepted), 3 => Wrong (Fail or Rejected)
                 measures: {
-                    metrics: { progress: 0, failed: false },
-                    build: { progress: 0, failed: false },
-                    unit_test: { progress: 0, failed: false },
-                    functional_test: { progress: 0, failed: false }
+                    metrics: {
+                        progress: 0,
+                        failed: false,
+                        categories: {
+                            test: {percent: 0, tendency: '+'},
+                            maintainability: {percent: 0, tendency: '+'},
+                            security: {percent: 0, tendency: '+'},
+                            workmanship: {percent: 0, tendency: '+'}
+                        }
+                    },
+                    build: {
+                        progress: 0,
+                        failed: false,
+                        categories: {
+                            debug: true,
+                            release: true
+                        },
+                        last_update: Number(new Date())
+                    },
+                    unit_test: {
+                        progress: 0,
+                        failed: false,
+                        categories: {
+                            passed: 0,
+                            failed: 0
+                        },
+                        covered_code: 0
+                    },
+                    functional_test: {
+                        progress: 0,
+                        failed: false,
+                        categories: {
+                            passed: 0,
+                            failed: 0
+                        },
+                        covered_code: 0
+                    }
                 }
             },data);
         };

@@ -1,16 +1,16 @@
 <div class="measure_block padded-left padded-right">
     <h5>Build</h5>
     <div class="row extra-margin">
-        <div class="col-md-6 text-center">
+        <div class="col-md-6 text-center" ng-if="itemBuild.categories.debug">
             <div class="build-critery sprite sprite-computer-blue-60px"></div>
             <p>Debug</p>
         </div>
-        <div class="col-md-6 text-center">
+        <div class="col-md-6 text-center" ng-if="itemBuild.categories.release">
             <div class="build-critery sprite sprite-computer-blue-60px"></div>
             <p>Release</p>
         </div>
     </div>
     <div class="flow-bottom text-center">
-        {{ 4424424232 | date: 'MM/dd/yyyy h:mma' | lowercase }}
+        {{ itemBuild.last_update | date: 'MM/dd/yyyy h:mma' | lowercase }}
     </div>
 </div>

@@ -13,7 +13,7 @@ angular.module('crossover')
     return {
         restrict: 'E',
         scope: {
-            item: '='
+            itemBuild: '='
         },
         templateUrl: 'components/directives/crossover-item/item_directives/build-measurement/build-measurement.html'
     }
