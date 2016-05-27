@@ -14,6 +14,8 @@
     "angular-bootstrap": "~1.1.0",
     "angular-mocks": "~1.4.0",
     "Chart.js": "~1.1.0",
-    "angular-chart": "jtblin/angular-chart"
+    "angular-chart": "jtblin/angular-chart",
+    "explorercanvas": "arv/explorercanvas",
+    "es5-shim": "es-shims/es5-shim"
   }
 }
