@@ -19,23 +19,8 @@ describe('my app', function() {
 
 
     it('should render home when user navigates to /home', function() {
-      expect(element.all(by.css('[ui-view] p')).first().getText()).
-        toMatch(/Play with the table/);
-    });
-
-  });
-
-
-  describe('contact', function() {
-
-    beforeEach(function() {
-      browser.get('index.html#/contact');
-    });
-
-
-    it('should render contact when user navigates to /contact', function() {
-      expect(element.all(by.css('[ui-view] p')).first().getText()).
-        toMatch(/partial for Contact/);
+      expect(element.all(by.css('[ui-view] h2')).first().getText()).
+        toMatch(/PANEL CONTROL/);
     });
 
   });
