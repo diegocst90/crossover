@@ -91,7 +91,13 @@ angular.module('crossover.home', ['ui.router'])
         });
 
         ItemsCollection.addItems([build1, build2, build3, build4, build5, build6]);
+
         $scope.items_collection = ItemsCollection.items;
+        $scope.viewby = 4;
+        $scope.totalItems = $scope.items_collection.length;
+        $scope.currentPage = 1;
+        $scope.itemsPerPage = $scope.viewby;
+        $scope.maxSize = 4; //Number of pager buttons to show
 
         /*
          * Collapse all details
