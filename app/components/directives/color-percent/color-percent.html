@@ -1,3 +1,3 @@
-<span ng-class="'color-ok ' + className" ng-if="percent >= 0.75">{{percent*100 | number : 0 }}%</span>
-<span ng-class="'color-warning ' + className" ng-if="percent >= 0.5 && percent < 0.75">{{percent*100 | number : 0 }}%</span>
-<span ng-class="'color-danger ' + className" ng-if="percent < 0.5">{{percent*100 | number : 0 }}%</span>
+<span ng-class="'color-ok ' + extraClass" ng-if="percent >= 0.75">{{percent*100 | number : 0 }}%</span>
+<span ng-class="'color-warning ' + extraClass" ng-if="percent >= 0.5 && percent < 0.75">{{percent*100 | number : 0 }}%</span>
+<span ng-class="'color-danger ' + extraClass" ng-if="percent < 0.5">{{percent*100 | number : 0 }}%</span>
