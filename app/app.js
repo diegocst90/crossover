@@ -7,9 +7,7 @@ angular.module('crossover', [
   'ngAnimate',
   'chart.js',
   'components.services.items',
-  'crossover.home',
-  'crossover.contact',
-  'crossover.version'
+  'crossover.home'
 ]).
 config(function($stateProvider, $urlRouterProvider, $httpProvider) {
     // if none of the above states are matched, use this as the fallback
