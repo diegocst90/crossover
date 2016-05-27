@@ -303,3 +303,30 @@
   height: 60px;
   background-position: -5px -355px;
 }
+
+/* Coverage Bar Directive */
+.coverage-bar {
+  height: 30px;
+  position: relative;
+
+  .filled, .unfilled {
+    height: 100%;
+    @include opacity(0.5);
+  }
+
+  .filled {
+    background-color: $ok-font-color;
+  }
+
+  .unfilled {
+    background-color: $not-passed-font-color;
+  }
+
+  p.legend {
+    position: absolute;
+    top: 0px;
+    left:0px;
+    right: 0px;
+    font-weight: normal;
+  }
+}

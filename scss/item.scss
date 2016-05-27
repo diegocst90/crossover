@@ -81,32 +81,15 @@
 
   /* Progress bar in <measure-bar> */
   measure-bar {
-    &.animate-repeat.ng-move .progress,
-    &.animate-repeat.ng-enter .progress,
-    &.animate-repeat.ng-leave .progress {
-      -webkit-transition:all linear 0.5s;
-      transition:all linear 0.5s;
-    }
-
-    &.animate-repeat.ng-leave.ng-leave-active .progress,
-    &.animate-repeat.ng-move .progress,
-    &.animate-repeat.ng-enter .progress {
-      opacity:0;
-    }
-
-    &.animate-repeat.ng-leave .progress,
-    &.animate-repeat.ng-move.ng-move-active .progress,
-    &.animate-repeat.ng-enter.ng-enter-active .progress {
-      opacity:1;
-    }
+    @include fade-in-out-animation(".progress");
 
     &.animate-hide .progress {
       transition: all linear 0.5s;
-      opacity: 1;
+      @include opacity(1);
     }
 
     &.animate-hide.ng-hide .progress {
-      opacity: 0;
+      @include opacity(0);
     }
   }
 
@@ -115,7 +98,7 @@
   }
 
   /* Animate item entrance */
-  @include fade-in-out-animation();
+  @include fade-in-out-animation("");
 
   .measure_block {
     border: 2px solid;
@@ -154,32 +137,6 @@
 
     .aligned-to-graphic {
       margin-top: 36px;
-    }
-  }
-
-  .coverage-bar {
-    height: 30px;
-    position: relative;
-
-    .filled, .unfilled {
-      height: 100%;
-      @include opacity(0.5);
-    }
-
-    .filled {
-      background-color: $ok-font-color;
-    }
-
-    .unfilled {
-      background-color: $not-passed-font-color;
-    }
-
-    p.legend {
-      position: absolute;
-      top: 0px;
-      left:0px;
-      right: 0px;
-      font-weight: normal;
     }
   }
 }
