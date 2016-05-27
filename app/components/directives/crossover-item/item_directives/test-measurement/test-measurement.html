@@ -3,13 +3,13 @@
     <div class="row">
         <div class="text-center">
             <canvas id="{{measurementIndex + '-' + item.data.id}}"
-                    height="100" width="200"
+                    height="90" width="180"
                     class="chart chart-pie"
                     chart-data="[passed, failed]" chart-labels="['Passed', 'Failed']" chart-colours="['#72ac4d', '#eb7d3b']">
             </canvas>
         </div>
         <div class="col-md-6 col-md-offset-6 text-center aligned-to-graphic">
-            <color-percent extra-class="'x-large'" percent="passed/tests_total"></color-percent>
+            <color-percent extra-class="(passed < tests_total)? 'x-large' : 'x-medium'" percent="passed/tests_total"></color-percent>
             <p class="text-center x-small color-black">tests passed</p>
         </div>
     </div>

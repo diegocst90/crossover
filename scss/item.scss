@@ -125,6 +125,7 @@
 
     .metric-critery + p, .build-critery + p {
       color: $crossover-black;
+      display: inline;
     }
 
     .flow-bottom {
@@ -137,8 +138,9 @@
 
     .chart-container {
       position: absolute;
-      left: -36px;
+      left: -46px;
       margin-top: 18px;
+      right: 22px;
     }
 
     .aligned-to-graphic {

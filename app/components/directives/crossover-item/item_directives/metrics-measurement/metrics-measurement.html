@@ -1,25 +1,25 @@
 <div class="measure_block padded-left padded-right">
     <h5>Metrics</h5>
     <div class="row">
-        <div class="col-md-5 text-center">
+        <div class="col-md-5 text-center ellipsis-overflow">
             <div ng-class="'metric-critery sprite sprite-arrow-' + ((itemMetrics.categories.test.tendency == '+')? 'up':'down' ) + '-' + ((itemMetrics.categories.test.tendency == '+')? 'green':'red' ) + '-60px'">
                 <span class="color-white">{{itemMetrics.categories.test.percent * 100 | number: 0}}</span>
             </div>
             <p>Test</p>
         </div>
-        <div class="col-md-7 text-center">
+        <div class="col-md-7 text-center ellipsis-overflow">
             <div ng-class="'metric-critery sprite sprite-arrow-' + ((itemMetrics.categories.maintainability.tendency == '+')? 'up':'down' ) + '-' + ((itemMetrics.categories.maintainability.tendency == '+')? 'green':'red' ) + '-60px'">
                 <span class="color-white">{{itemMetrics.categories.maintainability.percent * 100 | number: 0}}</span>
             </div>
             <p>Maintainability</p>
         </div>
-        <div class="col-md-5 text-center">
+        <div class="col-md-5 text-center ellipsis-overflow">
             <div ng-class="'metric-critery sprite sprite-arrow-' + ((itemMetrics.categories.security.tendency == '+')? 'right':'left' ) + '-' + ((itemMetrics.categories.security.tendency == '+')? 'yellow':'red' ) + '-60px'">
                 <span ng-class="'color-' + ((itemMetrics.categories.security.tendency == '+')? 'black':'white')">{{itemMetrics.categories.maintainability.percent * 100 | number: 0}}</span>
             </div>
             <p>Security</p>
         </div>
-        <div class="col-md-7 text-center">
+        <div class="col-md-7 text-center ellipsis-overflow">
             <div ng-class="'metric-critery sprite sprite-arrow-' + ((itemMetrics.categories.workmanship.tendency == '+')? 'right':'left' ) + '-' + ((itemMetrics.categories.workmanship.tendency == '+')? 'yellow':'red' ) + '-60px'">
                 <span ng-class="'color-' + ((itemMetrics.categories.workmanship.tendency == '+')? 'black':'white')">{{itemMetrics.categories.workmanship.percent * 100 | number: 0}}</span>
             </div>
