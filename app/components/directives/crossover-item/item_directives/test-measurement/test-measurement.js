@@ -30,8 +30,8 @@ angular.module('crossover.directives')
             }
 
             if (!((scope.passed + scope.failed) > 0)) { //empty all?
-                scope.passed = 1; //1 so the graphic is still rended
-                scope.failed = 0;
+                scope.passed = 0;
+                scope.failed = 1; //1 so the graphic is still rended
             }
 
             scope.tests_total = scope.passed + scope.failed;

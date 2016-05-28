@@ -11,6 +11,7 @@ angular.module('crossover.directives')
 
 .directive('stopEvent', function() {
     function stopEvent(e) {
+        //Stop propagation to parent elements
         e.stopPropagation();
     }
 

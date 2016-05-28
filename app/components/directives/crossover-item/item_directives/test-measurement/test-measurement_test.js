@@ -65,7 +65,7 @@ describe('crossover.directives metricsMeasurement', function() {
     });
 
     //Test default case for empty results
-    it('should show 100% percent of passed tests and 0% code covered when no data is provided', function() {
+    it('should show 100% percent of failed tests and 0% code covered when no data is provided', function() {
         var $injector = angular.injector(['crossover.items']);
         var ItemObject = $injector.get('ItemObject');
 
@@ -85,7 +85,7 @@ describe('crossover.directives metricsMeasurement', function() {
         //Check the main percent
         var queryResult = element[0].querySelectorAll('.row .aligned-to-graphic span');
         var percentDOM = angular.element(queryResult[0]);
-        expect(percentDOM.text()).toContain("100%");
+        expect(percentDOM.text()).toContain("0%");
 
         //Check the code covered section
         var queryResult = element[0].querySelectorAll('.flow-bottom .coverage-bar div.filled');
