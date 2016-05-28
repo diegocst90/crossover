@@ -64,7 +64,7 @@ and will start the test process using selenium.
 In order to make changes in the app, we need to consider 2 points:
 
 **Sass compression:**
-We use sass to write our custom styles, in order to see apply the style changes in the project
+We use sass to write our custom styles, in order to apply the style changes in the project
 you need to run:
 ```
 gulp sass
