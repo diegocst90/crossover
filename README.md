@@ -28,7 +28,7 @@ Now browse to the app at `http://localhost:8000/app/index.html`
 
 ### Test
 
-This project contains several unit tests (using Jasmine) and end-to-end tests (using Protractor).
+This project contains several unit tests (using Jasmine and Karma) and end-to-end tests (using Protractor).
 In order to run the tests you need to install node.js and its package manager (npm) (Instructions above).
 
 To run the unit tests run the following command:
@@ -37,7 +37,7 @@ npm test
 ```
 
 This will install all the necessary packages (all already installed in the project)
-and run the unit tests using Jasmine.
+and will run the unit tests using Jasmine and Karma.
 
 To run the end-to-end tests we need to set the base url for our project in the file "e2e-tests/protractor-conf.js"
 
@@ -47,22 +47,22 @@ npm run protractor
 ```
 
 This will install all the neccesary packages (all already installed in the project)
-and start the test process using selenium.
+and will start the test process using selenium.
 
 ### Extras
 
 In order to make changes in the app, we need to consider 2 points:
 
 1. Sass compression:
-We use sass to write our custom styles, in order to see the style changes in the project
-We need to run:
+We use sass to write our custom styles, in order to see apply the style changes in the project
+you need to run:
 ```
 gulp sass
 ```
 This will recompress the scss files and apply the new changes.
 
-2. $TemplateCache for testing:
-We use $TemplateCache to stave off the use of GET requests within Jasmine.
+2. $templateCache for testing:
+We use $templateCache to stave off the use of GET requests within Jasmine.
 So after every change in the templates, we need to run the following command to re-cache the new changes:
 ```
 gulp html2
