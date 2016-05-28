@@ -53,7 +53,7 @@ and will start the test process using selenium.
 
 In order to make changes in the app, we need to consider 2 points:
 
-1. Sass compression:
+**Sass compression:**
 We use sass to write our custom styles, in order to see apply the style changes in the project
 you need to run:
 ```
@@ -61,7 +61,7 @@ gulp sass
 ```
 This will recompress the scss files and apply the new changes.
 
-2. $templateCache for testing:
+**$templateCache for testing:**
 We use $templateCache to stave off the use of GET requests within Jasmine.
 So after every change in the templates, we need to run the following command to re-cache the new changes:
 ```
