@@ -41,7 +41,7 @@ and will run the unit tests using Jasmine and Karma.
 
 To run the end-to-end tests we need to set the base url for our project in the file "e2e-tests/protractor-conf.js".
 In case you ran the project using Apache (Xampp or MAMP) you need to comment line 12 (the baseUrl used in node.js)
-and uncomment line 13 (the baseUrl used in Apache)
+and uncomment line 13 (the baseUrl used in Apache) as the following mode
 
 ```
 //baseUrl: 'http://localhost:8000/app/'
