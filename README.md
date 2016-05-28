@@ -1,20 +1,75 @@
-# angular-seed — the seed for AngularJS apps
+# Crossover App
 
-This project is an application skeleton for a typical [AngularJS](http://angularjs.org/) web app.
-You can use it to quickly bootstrap your angular webapp projects and dev environment for these
-projects.
+This project is the application requested by Crossover as a step in their recluting process.
 
-The seed contains a sample AngularJS application and is preconfigured to install the Angular
-framework and a bunch of development and testing tools for instant web development gratification.
-
-The seed app doesn't do much, just shows how to wire two controllers and views together.
+The app contains one single controller and a variety of elements displayed in a list of items.
 
 
-## Getting Started
+## Installation process
 
-To get you started you can simply clone the angular-seed repository and install the dependencies:
+The zip file already contains all the libraries and plugins needed to run this project.
+All you need to do is locate this folder under your htdocs/ folder (if you're using Mamp or Xampp)
+or directly under your www/ folder if you have native apache installed.
 
-### Prerequisites
+Now browse to the app at `http://localhost/crossover/app/index.html`
+
+In case you don't have any local server installed you can use "npm" to run the project directly.
+For this case, you need to install node.js to run the project. You must have node.js and
+its package manager (npm) installed.  You can get them from [http://nodejs.org/](http://nodejs.org/).
+
+Then, run the following command 
+
+```
+npm start
+```
+
+Now browse to the app at `http://localhost:8000/app/index.html`
+
+
+### Test
+
+This project contains several unit tests (using Jasmine) and end-to-end tests (using Protractor).
+In order to run the tests you need to install node.js and its package manager (npm) (Instructions above).
+
+To run the unit tests run the following command:
+```
+npm test
+```
+
+This will install all the necessary packages (all already installed in the project)
+and run the unit tests using Jasmine.
+
+To run the end-to-end tests we need to set the base url for our project in the file "e2e-tests/protractor-conf.js"
+
+And then, run the following command:
+```
+npm run protractor
+```
+
+This will install all the neccesary packages (all already installed in the project)
+and start the test process using selenium.
+
+### Extras
+
+In order to make changes in the app, we need to consider 2 points:
+
+1. Sass compression:
+We use sass to write our custom styles, in order to see the style changes in the project
+We need to run:
+```
+gulp sass
+```
+This will recompress the scss files and apply the new changes.
+
+2. $TemplateCache for testing:
+We use $TemplateCache to stave off the use of GET requests within Jasmine.
+So after every change in the templates, we need to run the following command to re-cache the new changes:
+```
+gulp html2
+```
+This will re-cache the templates for their use in the unit tests. (This isn't require for the app in angular)
+
+
 
 You need git to clone the angular-seed repository. You can get git from
 [http://git-scm.com/](http://git-scm.com/).
