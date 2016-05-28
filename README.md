@@ -41,7 +41,17 @@ and will run the unit tests using Jasmine and Karma.
 
 To run the end-to-end tests we need to set the base url for our project in the file "e2e-tests/protractor-conf.js"
 
-And then, run the following command:
+And then, since Protractor is built upon WebDriver we need to install this.
+The project comes with a predefined script to do this:
+
+```
+npm run update-webdriver
+```
+
+This will download and install the latest version of the stand-alone WebDriver tool.
+
+Now, that the project is up (either on Apache or node.js), we can run the following command:
+
 ```
 npm run protractor
 ```
