@@ -8,7 +8,7 @@ The app contains one single controller and a variety of elements displayed in a 
 ## Installation process
 
 The zip file already contains all the libraries and plugins needed to run this project.
-All you need to do is locate this folder under your htdocs/ folder (if you're using Mamp or Xampp)
+All you need to do is locate the "crossover" folder under your htdocs/ folder (if you're using Mamp or Xampp)
 or directly under your www/ folder if you have native apache installed.
 
 Now browse to the app at `http://localhost/crossover/app/index.html`
@@ -17,7 +17,7 @@ In case you don't have any local server installed you can use "npm" to run the p
 For this case, you need to install node.js to run the project. You must have node.js and
 its package manager (npm) installed.  You can get them from [http://nodejs.org/](http://nodejs.org/).
 
-Then, run the following command
+Then, run the following command on the root of project (crossover/)
 
 ```
 npm start
