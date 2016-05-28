@@ -17,7 +17,7 @@ In case you don't have any local server installed you can use "npm" to run the p
 For this case, you need to install node.js to run the project. You must have node.js and
 its package manager (npm) installed.  You can get them from [http://nodejs.org/](http://nodejs.org/).
 
-Then, run the following command 
+Then, run the following command
 
 ```
 npm start
@@ -39,9 +39,17 @@ npm test
 This will install all the necessary packages (all already installed in the project)
 and will run the unit tests using Jasmine and Karma.
 
-To run the end-to-end tests we need to set the base url for our project in the file "e2e-tests/protractor-conf.js"
+To run the end-to-end tests we need to set the base url for our project in the file "e2e-tests/protractor-conf.js".
+In case you ran the project using Apache (Xampp or MAMP) you need to comment line 12 (the baseUrl used in node.js)
+and uncomment line 13 (the baseUrl used in Apache)
 
-And then, since Protractor is built upon WebDriver we need to install this.
+```
+//baseUrl: 'http://localhost:8000/app/'
+baseUrl: 'http://localhost/crossover/app/'
+```
+Otherwise, if you're running the project using node.js, leave it as it is.
+
+Now, since Protractor is built upon WebDriver we need to install this.
 The project comes with a predefined script to do this:
 
 ```
