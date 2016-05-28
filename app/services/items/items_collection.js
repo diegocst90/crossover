@@ -53,7 +53,7 @@ angular.module('crossover.items')
             return $http({
                 method: 'GET',
                 type: 'jsonp',
-                url: '/items_data_source.js'
+                url: 'items_data_source.js'
             });
         }
     };
