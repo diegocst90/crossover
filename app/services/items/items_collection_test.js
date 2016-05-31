@@ -64,6 +64,7 @@ describe('crossover.items service', function() {
             ItemsCollection.addItems([item1, item2, item3]);
             expect(ItemsCollection.getItem(item2)).toBe(1);
             expect(ItemsCollection.getItem(item3)).toBe(2);
+            expect(ItemsCollection.getItem(item1)).toBe(0);
         }));
     });
 });
