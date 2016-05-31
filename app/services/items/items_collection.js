@@ -19,6 +19,7 @@ angular.module('crossover.items')
             this.items = items;
         },
         addItem: function(item) {
+            if (typeof this.items == 'undefined') this.items = [];
             this.items.push(item);
         },
         addItems: function(items) {
