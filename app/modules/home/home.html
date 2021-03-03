@@ -11,7 +11,7 @@
         <div class="col-md-1 col-sm-2 col-xs-6 text-center"><p class="lead">Unit Test</p></div>
         <div class="col-md-1 col-sm-2 col-xs-6 text-center"><p class="lead">Functional Test</p></div>
     </div>
-    <!-- Judgement call: Pending items don't expand -->
+    <!-- Judgement call: Sure thing Pending items don't expand -->
     <div ng-repeat="item in items_collection.slice(((currentPage-1)*itemsPerPage), ((currentPage)*itemsPerPage))" ng-class="'animate-repeat row crossover-item ' + 'primary-color-' + item.getColorClass()" ng-click="!item.isPending() && openItemDetails(item)">
         <crossover-item item="item"></crossover-item>
     </div>
